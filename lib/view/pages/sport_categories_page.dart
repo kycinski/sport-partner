@@ -14,52 +14,50 @@ class SportCategoriesPage extends StatelessWidget {
         title: const Text('Kategorie'),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 30,
-              crossAxisSpacing: 20,
-            ),
-            itemCount: categories.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => CategoryDetailPage(
-                        choosenCategory: categories[index],
-                      ),
+        child: GridView.builder(
+          padding: const EdgeInsets.all(20),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 30,
+            crossAxisSpacing: 20,
+          ),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => CategoryDetailPage(
+                      choosenCategory: categories[index],
                     ),
-                  );
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      image: DecorationImage(image: AssetImage(categories[index].image), fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(25),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.25),
-                          offset: const Offset(2, 4),
-                          blurRadius: 4,
-                        )
-                      ]),
-                  child: Center(
-                    child: Text(
-                      categories[index].name,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(image: AssetImage(categories[index].image), fit: BoxFit.cover),
+                    borderRadius: BorderRadius.circular(25),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.25),
+                        offset: const Offset(2, 4),
+                        blurRadius: 4,
+                      )
+                    ]),
+                child: Center(
+                  child: Text(
+                    categories[index].name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
