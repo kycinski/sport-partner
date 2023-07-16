@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport.dart';
 
 class SportProvider with ChangeNotifier {
-  List<Sport> _categories = [
+  final List<Sport> _categories = [
     Sport(id: "1", name: 'Tenis', image: 'assets/images/tennis.jpg'),
     Sport(id: "2", name: 'Squash', image: 'assets/images/squash.jpg'),
     Sport(id: "3", name: 'Tenis stołowy', image: 'assets/images/table_tennis.jpg'),

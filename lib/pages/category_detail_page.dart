@@ -3,8 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:sport_partner/providers/sport_provider.dart';
 
 class CategoryDetailPage extends StatelessWidget {
-  String categoryId;
-  CategoryDetailPage({super.key, required this.categoryId});
+  final String categoryId;
+
+  const CategoryDetailPage({super.key, required this.categoryId});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +24,13 @@ class CategoryDetailPage extends StatelessWidget {
                 imagePath: 'assets/images/find_partner.jpg',
                 onClick: () {},
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ChooseActionButton(
                 text: 'ZASADY GRY',
                 imagePath: 'assets/images/rules.jpg',
                 onClick: () {},
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ChooseActionButton(
                 text: 'ZNAJDŹ MIEJSCE DO GRY',
                 imagePath: 'assets/images/find_place.jpg',
@@ -48,7 +49,7 @@ class ChooseActionButton extends StatelessWidget {
   final String imagePath;
   final Function()? onClick;
 
-  ChooseActionButton({
+  const ChooseActionButton({
     super.key,
     required this.text,
     required this.imagePath,
@@ -71,14 +72,14 @@ class ChooseActionButton extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.25),
-                offset: Offset(0, 4),
+                offset: const Offset(0, 4),
                 blurRadius: 4,
               )
             ]),
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Colors.white,
