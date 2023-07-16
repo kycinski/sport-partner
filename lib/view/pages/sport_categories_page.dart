@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport_categories_data.dart';
 import 'package:sport_partner/view/pages/category_detail_page.dart';
+import 'package:sport_partner/widgets/main_image_button.dart';
 
 class SportCategoriesPage extends StatelessWidget {
   const SportCategoriesPage({super.key});
@@ -23,36 +24,13 @@ class SportCategoriesPage extends StatelessWidget {
           ),
           itemCount: categories.length,
           itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CategoryDetailPage(
-                      choosenCategory: categories[index],
-                    ),
-                  ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    image: DecorationImage(image: AssetImage(categories[index].image), fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(25),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.25),
-                        offset: const Offset(2, 4),
-                        blurRadius: 4,
-                      )
-                    ]),
-                child: Center(
-                  child: Text(
-                    categories[index].name,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+            return MainImageButton(
+              text: categories[index].name,
+              imagePath: categories[index].image,
+              onClick: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CategoryDetailPage(
+                    choosenCategory: categories[index],
                   ),
                 ),
               ),
