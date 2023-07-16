@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sport_partner/pages/category_detail_page.dart';
-import 'package:sport_partner/providers/sport_provider.dart';
+import 'package:sport_partner/model/sport_categories_data.dart';
+import 'package:sport_partner/view/pages/category_detail_page.dart';
 
 class SportCategoriesPage extends StatelessWidget {
   const SportCategoriesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final categoriesProvider = Provider.of<SportProvider>(context, listen: false);
+    final categories = SportCategoriesData.categories;
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
@@ -23,14 +22,14 @@ class SportCategoriesPage extends StatelessWidget {
               mainAxisSpacing: 30,
               crossAxisSpacing: 20,
             ),
-            itemCount: categoriesProvider.sportCategories.length,
+            itemCount: categories.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => CategoryDetailPage(
-                        categoryId: categoriesProvider.sportCategories[index].id,
+                        choosenCategory: categories[index],
                       ),
                     ),
                   );
@@ -38,8 +37,7 @@ class SportCategoriesPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      image: DecorationImage(
-                          image: AssetImage(categoriesProvider.sportCategories[index].image), fit: BoxFit.cover),
+                      image: DecorationImage(image: AssetImage(categories[index].image), fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
@@ -50,7 +48,7 @@ class SportCategoriesPage extends StatelessWidget {
                       ]),
                   child: Center(
                     child: Text(
-                      categoriesProvider.sportCategories[index].name,
+                      categories[index].name,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

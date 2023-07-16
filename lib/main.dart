@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sport_partner/pages/sport_categories_page.dart';
-import 'package:sport_partner/providers/sport_provider.dart';
+import 'package:sport_partner/view/pages/sport_categories_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => SportProvider())],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
-        home: const SportCategoriesPage(),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
       ),
+      home: const SportCategoriesPage(),
     );
   }
 }

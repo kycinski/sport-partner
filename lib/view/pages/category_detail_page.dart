@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sport_partner/providers/sport_provider.dart';
+import 'package:sport_partner/model/sport_category.dart';
 
 class CategoryDetailPage extends StatelessWidget {
-  final String categoryId;
+  final SportCategory choosenCategory;
 
-  const CategoryDetailPage({super.key, required this.categoryId});
+  const CategoryDetailPage({super.key, required this.choosenCategory});
 
   @override
   Widget build(BuildContext context) {
-    final choosenCategory = Provider.of<SportProvider>(context, listen: false).findById(categoryId);
     return Scaffold(
       appBar: AppBar(
         title: Text(choosenCategory.name),
