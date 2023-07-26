@@ -1,5 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sport_partner2">
+   <queries>
+            <!-- to opens https URLs -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+   </queries>
    <application
         android:label="sport_partner2"
         android:name="${applicationName}"

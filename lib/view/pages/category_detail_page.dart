@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport_category.dart';
+import 'package:sport_partner/view/pages/find_place_page.dart';
 import 'package:sport_partner/widgets/main_image_button.dart';
 
 class CategoryDetailPage extends StatelessWidget {
@@ -33,7 +34,9 @@ class CategoryDetailPage extends StatelessWidget {
               MainImageButton(
                 text: 'ZNAJDŹ MIEJSCE DO GRY',
                 imagePath: 'assets/images/find_place.jpg',
-                onClick: () {},
+                onClick: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FindPlacePage()));
+                },
               ),
             ],
           ),
