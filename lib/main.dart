@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sport_partner/themes/app_theme.dart';
-import 'package:sport_partner/view/pages/sport_categories_page.dart';
+import 'package:sport_partner/view/pages/auth_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.defaultTheme,
-      home: const SportCategoriesPage(),
+      home: const AuthPage(),
     );
   }
 }

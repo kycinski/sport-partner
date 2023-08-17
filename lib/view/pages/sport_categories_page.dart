@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport_categories_data.dart';
 import 'package:sport_partner/view/pages/category_detail_page.dart';
-import 'package:sport_partner/widgets/main_image_button.dart';
+import 'package:sport_partner/view/widgets/app_drawer.dart';
+import 'package:sport_partner/view/widgets/main_image_button.dart';
 
 class SportCategoriesPage extends StatelessWidget {
   const SportCategoriesPage({super.key});
@@ -10,7 +11,7 @@ class SportCategoriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = SportCategoriesData.categories;
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: const Text('Kategorie'),
       ),

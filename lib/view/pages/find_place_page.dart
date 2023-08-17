@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/find_place_controller.dart';
-import 'package:sport_partner/widgets/map_preview.dart';
-import 'package:sport_partner/widgets/places_list_component.dart';
+import 'package:sport_partner/view/widgets/map_preview.dart';
+import 'package:sport_partner/view/widgets/places_list_component.dart';
 
 class FindPlacePage extends StatelessWidget {
   const FindPlacePage({super.key});
@@ -33,7 +33,7 @@ class FindPlacePage extends StatelessWidget {
                         return Column(
                           children: [
                             MapPreview(
-                              initialCoordinates: LatLng(51.1270779, 16.9918639),
+                              initialCoordinates: const LatLng(51.1270779, 16.9918639),
                               places: mapData.placesList,
                             ),
                             const SizedBox(height: 20),
