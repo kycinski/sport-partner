@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sport Partner</string>
+    <string name="facebook_app_id">3108260999477016</string>
+    <string name="fb_login_protocol_scheme">fb3108260999477016</string>
+    <string name="facebook_client_token">03efdbe2b8fdd9b7535cde1bd2ff3efd</string>
+</resources>

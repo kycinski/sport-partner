@@ -114,9 +114,17 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquareTile(onTap: () => loginController.signInWithGoogle(), imagePath: 'assets/images/google.png'),
+                    SquareTile(
+                        onTap: () async {
+                          await loginController.signInWithGoogle();
+                        },
+                        imagePath: 'assets/images/google.png'),
                     const SizedBox(width: 25),
-                    SquareTile(onTap: () {}, imagePath: 'assets/images/facebook.png')
+                    SquareTile(
+                        onTap: () async {
+                          await loginController.signInWithFacebook();
+                        },
+                        imagePath: 'assets/images/facebook.png')
                   ],
                 ),
                 const SizedBox(height: 25),

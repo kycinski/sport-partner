@@ -11,8 +11,20 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.154658331931-j3kg9mr2pdkeoc3g4v3vlrq3cnbg11jk</string>
+				<string>fb3108260999477016</string>
 			</array>
 		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>3108260999477016</string>
+	<key>FacebookClientToken</key>
+	<string>03efdbe2b8fdd9b7535cde1bd2ff3efd</string>
+	<key>FacebookDisplayName</key>
+	<string>Sport Partner</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
