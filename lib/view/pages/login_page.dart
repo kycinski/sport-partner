@@ -79,8 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 25),
                 ElevatedButton(
-                  onPressed: () =>
-                      loginController.signUserIn(email: emailController.text, password: passwordController.text),
+                  onPressed: () => loginController.signUserIn(
+                    email: emailController.text,
+                    password: passwordController.text,
+                    context: context,
+                  ),
                   child: const Text('Zaloguj'),
                 ),
                 const SizedBox(height: 50),
@@ -116,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     SquareTile(
                         onTap: () async {
-                          await loginController.signInWithGoogle();
+                          await loginController.signInWithGoogle(context);
                         },
                         imagePath: 'assets/images/google.png'),
                     const SizedBox(width: 25),
@@ -128,6 +131,12 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 const SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Kontynuuj bez logowania'),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

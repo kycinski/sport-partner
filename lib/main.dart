@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/themes/app_theme.dart';
-import 'package:sport_partner/view/pages/auth_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:sport_partner/view/pages/splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -19,10 +21,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: AppTheme.defaultTheme,
-      home: const AuthPage(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserController()),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: AppTheme.defaultTheme,
+        home: const SplashScreen(),
+      ),
     );
   }
 }

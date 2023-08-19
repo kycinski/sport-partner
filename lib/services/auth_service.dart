@@ -3,29 +3,23 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
-  Future<void> signInWithEmailAndPassword({required String email, required String password}) async {
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-    } on FirebaseAuthException catch (error) {
-      if (error.code == 'user-not-found') {
-        print('User not found');
-      } else if (error.code == 'wrong-password') {
-        print('Wrong password');
-      }
-    }
+  Future<String?> signInWithEmailAndPassword({required String email, required String password}) async {
+    final UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return userCredential.user?.uid;
   }
 
-  Future<UserCredential> signInWithGoogle() async {
+  Future<String?> signInWithGoogle() async {
     final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
     final GoogleSignInAuthentication gAuth = await gUser!.authentication;
     final credential = GoogleAuthProvider.credential(
       accessToken: gAuth.accessToken,
       idToken: gAuth.idToken,
     );
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+    return userCredential.user?.uid;
   }
 
   Future<UserCredential> signInWithFacebook() async {

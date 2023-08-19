@@ -11,7 +11,7 @@ class SportCategoriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = SportCategoriesData.categories;
     return Scaffold(
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       appBar: AppBar(
         title: const Text('Kategorie'),
       ),

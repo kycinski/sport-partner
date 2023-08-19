@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sport_partner/services/auth_service.dart';
 
 class LoginController with ChangeNotifier {
   DateTime _selectedDate = DateTime.now();
@@ -23,12 +23,11 @@ class LoginController with ChangeNotifier {
     notifyListeners();
   }
 
-  void signUserIn({required String email, required String password}) async {
+  void signUserIn({required String email, required String password, required BuildContext context}) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      await AuthService()
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((userUid) => setUserDataAndGoBack(context: context, userUid: userUid!));
     } on FirebaseAuthException catch (error) {
       if (error.code == 'user-not-found') {
         print('User not found');
@@ -38,19 +37,21 @@ class LoginController with ChangeNotifier {
     }
   }
 
-  signInWithGoogle() async {
-    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
-    final credential = GoogleAuthProvider.credential(
-      accessToken: gAuth.accessToken,
-      idToken: gAuth.idToken,
-    );
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+  signInWithGoogle(BuildContext context) async {
+    await AuthService().signInWithGoogle().then((userUid) => setUserDataAndGoBack(context: context, userUid: userUid!));
   }
 
   signInWithFacebook() async {
     final LoginResult loginResult = await FacebookAuth.instance.login();
     final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
     return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+  }
+
+  void setUserDataAndGoBack({
+    required BuildContext context,
+    required String userUid,
+  }) {
+    // Provider.of<UserController>(context, listen: false).setUserData(userUid: userUid);
+    Navigator.pop(context);
   }
 }
