@@ -22,7 +22,7 @@ class FindPlaceController with ChangeNotifier {
   }
 
   Future<void> fetchPlaces() async {
-    _placesList = await _placesService.fetchPlacesFromFirestore(city: 'Wroclaw', category: 'squash');
+    _placesList = await _placesService.fetchPlacesFromFirestore(city: 'Wrocław', category: 'squash');
     notifyListeners();
   }
 
