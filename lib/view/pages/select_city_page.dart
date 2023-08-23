@@ -4,6 +4,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:sport_partner/data/cities_data.dart';
 import 'package:sport_partner/services/city_service.dart';
+import 'package:sport_partner/view/pages/sport_categories_page.dart';
 
 class SelectCityPage extends StatefulWidget {
   const SelectCityPage({super.key});
@@ -18,8 +19,23 @@ class _SelectCityPageState extends State<SelectCityPage> {
   String? _selectedCity;
   late Future<void> _setInitialData;
 
-  Future<void> saveSelectedCity(String city) async {
+  Future<void> _onContinueClicked(String city) async {
     await cityService.saveSelectedCity(city);
+    _navigateToSportCategoriesPage();
+  }
+
+  void _navigateToSportCategoriesPage() {
+    if (context.mounted) {
+      if (Navigator.canPop(context)) {
+        Navigator.pop(context);
+      } else {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const SportCategoriesPage(),
+          ),
+        );
+      }
+    }
   }
 
   Future<void> setInitialData() async {
@@ -104,7 +120,7 @@ class _SelectCityPageState extends State<SelectCityPage> {
                         }),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () async => saveSelectedCity(_selectedCity!),
+                      onPressed: () async => _onContinueClicked(_selectedCity!),
                       child: const Text('Kontynuuj'),
                     ),
                   ],

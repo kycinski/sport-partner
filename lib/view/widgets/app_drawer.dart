@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/view/pages/login_or_register.dart';
+import 'package:sport_partner/view/pages/select_city_page.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -10,11 +11,29 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: SafeArea(
-        child: Consumer<UserController>(builder: (context, userController, child) {
-          return userController.userLoggedIn
-              ? _buildAppDrawerForLoggedUser(userController)
-              : _buildAppDrawerForNotLoggedUser(context);
-        }),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(children: [
+            Consumer<UserController>(
+              builder: (context, userController, child) {
+                return userController.userLoggedIn
+                    ? _buildAppDrawerForLoggedUser(userController)
+                    : _buildAppDrawerForNotLoggedUser(context);
+              },
+            ),
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SelectCityPage(),
+                  ),
+                );
+              },
+              child: const Text('Zmień miasto'),
+            ),
+          ]),
+        ),
       ),
     );
   }
