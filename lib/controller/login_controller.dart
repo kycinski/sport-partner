@@ -25,9 +25,10 @@ class LoginController with ChangeNotifier {
 
   void signUserIn({required String email, required String password, required BuildContext context}) async {
     try {
-      await AuthService()
-          .signInWithEmailAndPassword(email: email, password: password)
-          .then((userUid) => setUserDataAndGoBack(context: context, userUid: userUid!));
+      await AuthService().signInWithEmailAndPassword(email: email, password: password);
+      if (context.mounted) {
+        Navigator.pop(context);
+      }
     } on FirebaseAuthException catch (error) {
       if (error.code == 'user-not-found') {
         print('User not found');
@@ -38,20 +39,15 @@ class LoginController with ChangeNotifier {
   }
 
   signInWithGoogle(BuildContext context) async {
-    await AuthService().signInWithGoogle().then((userUid) => setUserDataAndGoBack(context: context, userUid: userUid!));
+    await AuthService().signInWithGoogle();
+    if (context.mounted) {
+      Navigator.pop(context);
+    }
   }
 
   signInWithFacebook() async {
     final LoginResult loginResult = await FacebookAuth.instance.login();
     final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
     return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-  }
-
-  void setUserDataAndGoBack({
-    required BuildContext context,
-    required String userUid,
-  }) {
-    // Provider.of<UserController>(context, listen: false).setUserData(userUid: userUid);
-    Navigator.pop(context);
   }
 }
