@@ -8,11 +8,11 @@ class UserService {
     if (!userData.exists) {
       return UserModel(uid: userUid);
     } else {
-      return UserModel.fromJson(userData.data()!);
+      return UserModel.fromJson(userUid, userData.data()!);
     }
   }
 
-  Future<void> setUserData({required String userUid}) async {
-    await FirebaseFirestore.instance.collection(_usersCollection).doc(userUid).set({});
+  Future<void> setUserData({required UserModel userModel}) async {
+    await FirebaseFirestore.instance.collection(_usersCollection).doc(userModel.uid).set(userModel.toJson());
   }
 }

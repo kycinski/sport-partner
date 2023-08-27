@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/view/pages/edit_profile_page.dart';
 import 'package:sport_partner/view/pages/login_or_register.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
 
@@ -17,7 +18,7 @@ class AppDrawer extends StatelessWidget {
             Consumer<UserController>(
               builder: (context, userController, child) {
                 return userController.userLoggedIn
-                    ? _buildAppDrawerForLoggedUser(userController)
+                    ? _buildAppDrawerForLoggedUser(userController, context)
                     : _buildAppDrawerForNotLoggedUser(context);
               },
             ),
@@ -38,7 +39,7 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildAppDrawerForLoggedUser(UserController userController) {
+  Widget _buildAppDrawerForLoggedUser(UserController userController, BuildContext context) {
     return Column(
       children: [
         const SizedBox(height: 35),
@@ -56,10 +57,20 @@ class AppDrawer extends StatelessWidget {
             textAlign: TextAlign.center,
           )
         else
-          Text('Witaj ${userController.user!.name}'),
+          Text(
+            'Witaj ${userController.user!.name}',
+            style: const TextStyle(color: Colors.black),
+          ),
         const SizedBox(height: 35),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const EditProfilePage(),
+              ),
+            );
+          },
           child: const Text('Edytuj profil'),
         ),
         ElevatedButton.icon(

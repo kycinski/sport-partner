@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: AppTheme.defaultTheme,
+        scrollBehavior: const ScrollBehavior().copyWith(overscroll: false),
         home: const SplashScreen(),
       ),
     );

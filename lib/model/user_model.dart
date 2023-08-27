@@ -1,7 +1,7 @@
 class UserModel {
   String uid;
   String? name;
-  String? birthDate;
+  DateTime? birthDate;
   String? sex;
   String? profilePhotoUrl;
 
@@ -13,13 +13,22 @@ class UserModel {
     this.profilePhotoUrl,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) {
+  factory UserModel.fromJson(String userUid, Map<String, dynamic> json) {
     return UserModel(
-      uid: json['uid'],
+      uid: userUid,
       name: json['name'],
-      birthDate: json['birthDate'],
+      birthDate: json['birthDate'] != null ? DateTime.parse(json['birthDate']) : null,
       sex: json['sex'],
       profilePhotoUrl: json['profilePhotoUrl'],
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'birthDate': birthDate?.toIso8601String(),
+      'sex': sex,
+      'profilePhotoUrl': profilePhotoUrl,
+    };
   }
 }

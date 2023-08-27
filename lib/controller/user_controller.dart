@@ -23,6 +23,16 @@ class UserController with ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> updateUserData({required UserModel userModel}) async {
+    try {
+      await UserService().setUserData(userModel: userModel);
+      _user = userModel;
+      notifyListeners();
+    } catch (error) {
+      rethrow;
+    }
+  }
+
   void resetState() {
     _userLoggedIn = false;
     _user = null;
