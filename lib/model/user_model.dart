@@ -2,15 +2,15 @@ class UserModel {
   String uid;
   String? name;
   DateTime? birthDate;
-  String? sex;
-  String? profilePhotoUrl;
+  String? gender;
+  String? profileImageUrl;
 
   UserModel({
     required this.uid,
     this.name,
     this.birthDate,
-    this.sex,
-    this.profilePhotoUrl,
+    this.gender,
+    this.profileImageUrl,
   });
 
   factory UserModel.fromJson(String userUid, Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class UserModel {
       uid: userUid,
       name: json['name'],
       birthDate: json['birthDate'] != null ? DateTime.parse(json['birthDate']) : null,
-      sex: json['sex'],
-      profilePhotoUrl: json['profilePhotoUrl'],
+      gender: json['gender'],
+      profileImageUrl: json['profileImageUrl'],
     );
   }
 
@@ -27,8 +27,8 @@ class UserModel {
     return {
       'name': name,
       'birthDate': birthDate?.toIso8601String(),
-      'sex': sex,
-      'profilePhotoUrl': profilePhotoUrl,
+      'gender': gender,
+      'profileImageUrl': profileImageUrl,
     };
   }
 }

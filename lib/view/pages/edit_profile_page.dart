@@ -4,6 +4,7 @@ import 'package:sport_partner/controller/edit_profile_controller.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/view/widgets/custom_page_background.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
+import 'package:sport_partner/view/widgets/edit_photo.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -46,13 +47,35 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   child: Column(
                     children: [
                       const SizedBox(height: 35),
-                      ClipOval(
-                        child: Image.asset(
-                          'assets/images/profile_picture.jpeg',
-                          height: 120,
-                        ),
-                      ),
+                      const EditPhoto(),
                       const SizedBox(height: 35),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: RadioListTile(
+                              title: const Text('Mężczyzna', style: TextStyle(color: Colors.white)),
+                              value: 'M',
+                              groupValue: editProfileController.selectedGender,
+                              onChanged: (value) {
+                                editProfileController.selectGender(value!);
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            child: RadioListTile(
+                              title: const Text(
+                                'Kobieta',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              value: 'F',
+                              groupValue: editProfileController.selectedGender,
+                              onChanged: (value) {
+                                editProfileController.selectGender(value!);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                       Row(
                         children: [
                           Flexible(
@@ -72,7 +95,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   onPressed: () {
                                     editProfileController.selectBirthDate(context);
                                   },
-                                  child: Text(editProfileController.selectedDateAsString),
+                                  child: Text(editProfileController.selectedDateAsString ?? 'Wybierz datę'),
                                 ),
                               ],
                             ),

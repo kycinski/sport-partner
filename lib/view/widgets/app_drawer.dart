@@ -44,10 +44,19 @@ class AppDrawer extends StatelessWidget {
       children: [
         const SizedBox(height: 35),
         ClipOval(
-          child: Image.asset(
-            'assets/images/profile_picture.jpeg',
-            height: 70,
-          ),
+          child: userController.user?.profileImageUrl != null
+              ? Image.network(
+                  userController.user!.profileImageUrl!,
+                  height: 70,
+                  width: 70,
+                  fit: BoxFit.cover,
+                )
+              : Image.asset(
+                  'assets/images/profile_picture.jpeg',
+                  height: 70,
+                  width: 70,
+                  fit: BoxFit.cover,
+                ),
         ),
         const SizedBox(height: 15),
         if (userController.user?.name == null)
