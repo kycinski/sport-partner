@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport_category.dart';
+import 'package:sport_partner/view/pages/find_partner_page.dart';
 import 'package:sport_partner/view/pages/find_place_page.dart';
 import 'package:sport_partner/view/widgets/main_image_button.dart';
 
@@ -22,7 +23,9 @@ class CategoryDetailPage extends StatelessWidget {
               MainImageButton(
                 text: 'ZNAJDŹ PARTNERA',
                 imagePath: 'assets/images/find_partner.jpg',
-                onClick: () {},
+                onClick: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPartnerPage()));
+                },
               ),
               const SizedBox(height: 20),
               MainImageButton(
