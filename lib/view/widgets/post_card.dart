@@ -1,9 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/model/post.dart';
 
 class PostCard extends StatelessWidget {
   final Post post;
   const PostCard({super.key, required this.post});
+
+  Image _buildImage(String? profileImageUrl) {
+    const imageSize = 50.0;
+    if (profileImageUrl != null) {
+      return Image.network(
+        profileImageUrl,
+        height: imageSize,
+        width: imageSize,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        'assets/images/profile_picture.jpeg',
+        height: imageSize,
+        width: imageSize,
+        fit: BoxFit.cover,
+      );
+    }
+  }
+
+  String skillLevelAsString(SkillLevel skillLevel) {
+    switch (skillLevel) {
+      case SkillLevel.beginner:
+        return 'Początkujący';
+      case SkillLevel.intermediate:
+        return 'Średniozaawansowany';
+      case SkillLevel.advanced:
+        return 'Zaawansowany';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +60,7 @@ class PostCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipOval(
-                  child: Image.asset(
-                    'assets/images/profile_picture.jpeg',
-                    height: 50,
-                    width: 50,
-                    fit: BoxFit.cover,
-                  ),
+                  child: _buildImage(post.profileImageUrl),
                 ),
                 const SizedBox(width: 15),
                 Expanded(
@@ -46,7 +72,7 @@ class PostCard extends StatelessWidget {
                         style: const TextStyle(color: Colors.black),
                       ),
                       Text(
-                        post.level,
+                        skillLevelAsString(post.skillLevel),
                         style: const TextStyle(color: Colors.black, fontSize: 12),
                       ),
                       Expanded(
