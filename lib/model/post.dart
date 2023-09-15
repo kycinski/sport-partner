@@ -24,32 +24,8 @@ class Post {
       name: userData['name'],
       age: DateToAgeConverter.calculateAge(userData['birthDate']),
       description: data['description'],
-      skillLevel: _parseSkillLevel(data['skillLevel']),
+      skillLevel: SkillLevelExtension.parseSkillLevel(data['skillLevel']),
       profileImageUrl: userData['profileImageUrl'],
     );
-  }
-
-  static SkillLevel _parseSkillLevel(String levelString) {
-    switch (levelString) {
-      case 'beginner':
-        return SkillLevel.beginner;
-      case 'intermediate':
-        return SkillLevel.intermediate;
-      case 'advanced':
-        return SkillLevel.advanced;
-      default:
-        throw ArgumentError('Nieprawidłowy poziom zaawansowania: $levelString');
-    }
-  }
-
-  static String _skillLevelToString(SkillLevel level) {
-    switch (level) {
-      case SkillLevel.beginner:
-        return 'beginner';
-      case SkillLevel.intermediate:
-        return 'intermediate';
-      case SkillLevel.advanced:
-        return 'advanced';
-    }
   }
 }

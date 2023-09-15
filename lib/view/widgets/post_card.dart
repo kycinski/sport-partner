@@ -25,17 +25,6 @@ class PostCard extends StatelessWidget {
     }
   }
 
-  String skillLevelAsString(SkillLevel skillLevel) {
-    switch (skillLevel) {
-      case SkillLevel.beginner:
-        return 'Początkujący';
-      case SkillLevel.intermediate:
-        return 'Średniozaawansowany';
-      case SkillLevel.advanced:
-        return 'Zaawansowany';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,7 +61,7 @@ class PostCard extends StatelessWidget {
                         style: const TextStyle(color: Colors.black),
                       ),
                       Text(
-                        skillLevelAsString(post.skillLevel),
+                        post.skillLevel.skillLevelToString(),
                         style: const TextStyle(color: Colors.black, fontSize: 12),
                       ),
                       Expanded(

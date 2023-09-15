@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/add_post_controller.dart';
+import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
 
 class AddPostPage extends StatefulWidget {
@@ -32,7 +34,7 @@ class _AddPostPageState extends State<AddPostPage> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AddPostController(),
+      create: (context) => AddPostController(user: context.read<UserController>().user!),
       builder: (context, child) {
         final addPostController = context.watch<AddPostController>();
         return Scaffold(
@@ -48,14 +50,13 @@ class _AddPostPageState extends State<AddPostPage> {
                 const Text('Jestem:', style: TextStyle(color: Colors.black)),
                 Wrap(
                   spacing: 20,
-                  children: addPostController.skillLevels.map((skillLevel) {
+                  children: SkillLevel.values.map((skillLevel) {
                     return FilterChip(
-                      label: Text(skillLevel),
-                      onSelected: (value) {
-                        addPostController.setSelectedSkillLevel(skillLevel);
-                      },
-                      selected: addPostController.selectedSkillLevel == skillLevel ? true : false,
-                    );
+                        label: Text(skillLevel.skillLevelToString()),
+                        onSelected: (value) {
+                          addPostController.setSelectedSkillLevel(skillLevel);
+                        },
+                        selected: addPostController.selectedSkillLevel == skillLevel ? true : false);
                   }).toList(),
                 ),
                 const Text(
@@ -97,7 +98,7 @@ class _AddPostPageState extends State<AddPostPage> {
                 Center(
                   child: ElevatedButton(
                     onPressed: () async {
-                      await addPostController.onSaveClicked(descriptionController.text.trim());
+                      await addPostController.onAddClicked(descriptionController.text.trim());
                       if (context.mounted) {
                         if (addPostController.error != null) {
                           ScaffoldMessenger.of(context).showSnackBar(
