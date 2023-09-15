@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/find_partner_controller.dart';
+import 'package:sport_partner/view/pages/add_post_page.dart';
 import 'package:sport_partner/view/widgets/post_card.dart';
 
 class FindPartnerPage extends StatelessWidget {
@@ -31,7 +32,14 @@ class FindPartnerPage extends StatelessWidget {
             );
           }),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddPostPage(),
+                ),
+              );
+            },
             child: const Icon(Icons.add),
           ),
         );
