@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                         controller: passwordController,
                         hintText: 'Hasło',
                         obscureText: true,
+                        maxLines: 1,
                       ),
                     ],
                   ),

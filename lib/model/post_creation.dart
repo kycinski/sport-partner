@@ -28,6 +28,7 @@ class PostCreation {
       'desiredGender': desiredGender,
       'desiredAgeRange': desiredAgeRange,
       'userRef': userRef,
+      'createdAt': Timestamp.now(),
     };
   }
 }

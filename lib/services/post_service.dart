@@ -10,6 +10,7 @@ class PostService {
           .doc(city)
           .collection('posts')
           .where('category', isEqualTo: category)
+          .orderBy('createdAt', descending: true)
           .get();
       List<Post> posts = [];
       for (final doc in querySnapshot.docs) {

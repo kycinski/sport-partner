@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/find_partner_controller.dart';
+import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/view/pages/add_post_page.dart';
 import 'package:sport_partner/view/widgets/post_card.dart';
 
@@ -33,12 +34,18 @@ class FindPartnerPage extends StatelessWidget {
           }),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AddPostPage(),
-                ),
-              );
+              context.read<UserController>().userConfirmedDetails
+                  ? Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AddPostPage(),
+                      ),
+                    )
+                  : ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Aby dodawać posty musisz uzupełnić swój profil'),
+                      ),
+                    );
             },
             child: const Icon(Icons.add),
           ),

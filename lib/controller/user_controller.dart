@@ -11,6 +11,12 @@ class UserController with ChangeNotifier {
 
   UserModel? get user => _user;
   bool get userLoggedIn => _userLoggedIn;
+  bool get userConfirmedDetails {
+    if (user?.name != null && user?.gender != null && user?.birthDate != null) {
+      return true;
+    }
+    return false;
+  }
 
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
