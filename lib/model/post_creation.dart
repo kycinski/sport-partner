@@ -24,7 +24,7 @@ class PostCreation {
     return {
       'category': category,
       'description': description,
-      'skillLevel': skillLevel.skillLevelToString(),
+      'skillLevel': skillLevel.name,
       'desiredGender': desiredGender,
       'desiredAgeRange': desiredAgeRange,
       'userRef': userRef,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/model/post.dart';
@@ -87,9 +88,9 @@ class PostCard extends StatelessWidget {
               child: InkWell(
                 borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
                 onTap: () {},
-                child: const Center(
+                child: Center(
                   child: Text(
-                    'Odpowiedz',
+                    'reply'.tr(),
                   ),
                 ),
               ),

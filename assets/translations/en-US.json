@@ -1,0 +1,45 @@
+{
+    "categories": {
+        "categories": "Categories",
+        "tennis": "Tennis",
+        "squash": "Squash",
+        "table_tennis": "Table tennis",
+        "badminton": "Badminton",
+        "padel": "Padel",
+        "billiard": "Billiard"
+    },
+    "cities": {
+        "wroclaw": "Wroclaw",
+        "cracow": "Cracow",
+        "warsaw": "Warsaw"
+    },
+    "mainOptions": {
+        "findPartner": "Find partner",
+        "gameRules": "Game rules",
+        "findPlace": "Find place"
+    },
+    "buttons": {
+        "continue": "Continue",
+        "login": "Login",
+        "logout": "Logout",
+        "changeCity": "Change city",
+        "continueAnonymously": "Continue anonymously",
+        "editProfile": "Edit profile",
+        "save": "Save"
+    },
+    "skillLevel": {
+        "beginner": "beginner",
+        "intermediate": "intermediate",
+        "advanced": "advanced"
+    },
+    "hello": "Hello {}",
+    "notLoggedMessage": "Log in to use the full features of Sport Partner",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "orContinueWith": "Or continue with",
+    "chooseYourCity": "Choose your city:",
+    "notAmember": "Not a member?",
+    "registerNow": "Register now",
+    "reply": "Reply"
+}

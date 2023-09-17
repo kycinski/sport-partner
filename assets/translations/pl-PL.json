@@ -1,0 +1,45 @@
+{
+    "categories": {
+        "categories": "Kategorie",
+        "tennis": "Tenis",
+        "squash": "Squash",
+        "table_tennis": "Tenis stołowy",
+        "badminton": "Badminton",
+        "padel": "Padel",
+        "billiard": "Bilard"
+    },
+    "cities": {
+        "wroclaw": "Wrocław",
+        "cracow": "Kraków",
+        "warsaw": "Warszawa"
+    },
+    "mainOptions": {
+        "findPartner": "Znajdź partnera",
+        "gameRules": "Zasady gry",
+        "findPlace": "Znajdź miejsce"
+    },
+    "buttons": {
+        "continue": "Kontynuuj",
+        "login": "Zaloguj",
+        "logout": "Wyloguj",
+        "changeCity": "Zmień miasto",
+        "continueAnonymously": "Kontynuuj anonimowo",
+        "editProfile": "Edytuj profil",
+        "save": "Zapisz"
+    },
+    "skillLevel": {
+        "beginner": "początkujący",
+        "intermediate": "średniozaawansowany",
+        "advanced": "zaawansowany"
+    },
+    "hello": "Witaj {}",
+    "notLoggedMessage": "Zaloguj się aby korzystać z pełnych mozliwosci Sport Partner",
+    "email": "Email",
+    "password": "Hasło",
+    "name": "Imię",
+    "orContinueWith": "Lub kontynuuj z",
+    "chooseYourCity": "Wybierz swoje miasto:",
+    "notAmember": "Nie masz konta?",
+    "registerNow": "Zarejestruj się",
+    "reply": "Odpowiedz"
+}

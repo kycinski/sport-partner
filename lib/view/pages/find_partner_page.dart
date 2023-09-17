@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/find_partner_controller.dart';
@@ -16,7 +17,7 @@ class FindPartnerPage extends StatelessWidget {
         context.read<FindPartnerController>().fetchPosts();
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Znajdź partnera'),
+            title: Text('mainOptions.findPartner'.tr()),
           ),
           body: Consumer<FindPartnerController>(builder: (context, findPartnerController, _) {
             return ListView.separated(

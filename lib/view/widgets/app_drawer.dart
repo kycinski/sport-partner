@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
@@ -31,7 +32,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Zmień miasto'),
+              child: Text('buttons.changeCity'.tr()),
             ),
           ]),
         ),
@@ -67,7 +68,7 @@ class AppDrawer extends StatelessWidget {
           )
         else
           Text(
-            'Witaj ${userController.user!.name}',
+            'hello'.tr(args: [userController.user!.name!]),
             style: const TextStyle(color: Colors.black),
           ),
         const SizedBox(height: 35),
@@ -80,14 +81,14 @@ class AppDrawer extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Edytuj profil'),
+          child: Text('buttons.editProfile'.tr()),
         ),
         ElevatedButton.icon(
           onPressed: () async {
             userController.signOut();
           },
           icon: const Icon(Icons.logout),
-          label: const Text('Wyloguj'),
+          label: Text('buttons.logout'.tr()),
         ),
       ],
     );
@@ -96,16 +97,16 @@ class AppDrawer extends StatelessWidget {
   Widget _buildAppDrawerForNotLoggedUser(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          'Zaloguj się aby korzystać z pełnych mozliwosci Sport Partner',
-          style: TextStyle(color: Colors.black),
+        Text(
+          'notLoggedMessage'.tr(),
+          style: const TextStyle(color: Colors.black),
         ),
         ElevatedButton.icon(
           onPressed: () async {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginOrRegisterPage()));
           },
           icon: const Icon(Icons.login),
-          label: const Text('Zaloguj'),
+          label: Text('buttons.login'.tr()),
         ),
       ],
     );

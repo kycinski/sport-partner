@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+
 enum SkillLevel {
   beginner,
   intermediate,
@@ -21,11 +23,11 @@ extension SkillLevelExtension on SkillLevel {
   String skillLevelToString() {
     switch (this) {
       case SkillLevel.beginner:
-        return 'beginner';
+        return 'skillLevel.beginner'.tr();
       case SkillLevel.intermediate:
-        return 'intermediate';
+        return 'skillLevel.intermediate'.tr();
       case SkillLevel.advanced:
-        return 'advanced';
+        return 'skillLevel.advanced'.tr();
     }
   }
 }

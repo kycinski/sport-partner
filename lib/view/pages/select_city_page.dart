@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sport_partner/data/cities_data.dart';
 import 'package:sport_partner/services/city_service.dart';
@@ -77,9 +78,9 @@ class _SelectCityPageState extends State<SelectCityPage> {
                   children: [
                     const SizedBox(height: 30),
                     Image.asset('assets/images/logo.png'),
-                    const Text(
-                      'Wybierz swoje miasto: ',
-                      style: TextStyle(color: Colors.white),
+                    Text(
+                      'chooseYourCity'.tr(),
+                      style: const TextStyle(color: Colors.white),
                     ),
                     const SizedBox(height: 15),
                     FutureBuilder(
@@ -121,7 +122,7 @@ class _SelectCityPageState extends State<SelectCityPage> {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () async => _onContinueClicked(_selectedCity!),
-                      child: const Text('Kontynuuj'),
+                      child: Text('buttons.continue'.tr()),
                     ),
                   ],
                 ),

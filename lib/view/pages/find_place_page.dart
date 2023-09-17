@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,7 @@ class FindPlacePage extends StatelessWidget {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Znajdź miejsce'),
+            title: Text('mainOptions.findPlace'.tr()),
           ),
           body: SafeArea(
             child: Padding(

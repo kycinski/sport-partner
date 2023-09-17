@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,7 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
     return Scaffold(
       drawer: const AppDrawer(),
       appBar: AppBar(
-        title: const Text('Kategorie'),
+        title: Text('categories.categories'.tr()),
       ),
       body: SafeArea(
         child: GridView.builder(

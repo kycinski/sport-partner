@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sport_partner/model/sport_category.dart';
 import 'package:sport_partner/view/pages/find_partner_page.dart';
@@ -21,7 +22,7 @@ class CategoryDetailPage extends StatelessWidget {
           child: Column(
             children: [
               MainImageButton(
-                text: 'ZNAJDŹ PARTNERA',
+                text: 'mainOptions.findPartner'.tr().toUpperCase(),
                 imagePath: 'assets/images/find_partner.jpg',
                 onClick: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPartnerPage()));
@@ -29,13 +30,13 @@ class CategoryDetailPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               MainImageButton(
-                text: 'ZASADY GRY',
+                text: 'mainOptions.gameRules'.tr().toUpperCase(),
                 imagePath: 'assets/images/rules.jpg',
                 onClick: () {},
               ),
               const SizedBox(height: 20),
               MainImageButton(
-                text: 'ZNAJDŹ MIEJSCE DO GRY',
+                text: 'mainOptions.findPlace'.tr().toUpperCase(),
                 imagePath: 'assets/images/find_place.jpg',
                 onClick: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPlacePage()));

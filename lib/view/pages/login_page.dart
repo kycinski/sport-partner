@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/login_controller.dart';
@@ -34,12 +35,9 @@ class _LoginPageState extends State<LoginPage> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
-                const Icon(
-                  Icons.lock,
-                  size: 100,
-                ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
+                Image.asset('assets/images/logo.png'),
+                const SizedBox(height: 10),
                 const Text(
                   'Welcome back you\'ve been missed!',
                   style: TextStyle(
@@ -59,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 10),
                       CustomTextField(
                         controller: passwordController,
-                        hintText: 'Hasło',
+                        hintText: 'password'.tr(),
                         obscureText: true,
                         maxLines: 1,
                       ),
@@ -85,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
                     password: passwordController.text,
                     context: context,
                   ),
-                  child: const Text('Zaloguj'),
+                  child: Text('buttons.login'.tr()),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -101,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                          'Lub kontynuuj z',
+                          'orContinueWith'.tr(),
                           style: TextStyle(color: Colors.grey[700]),
                         ),
                       ),
@@ -136,21 +134,21 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text('Kontynuuj bez logowania'),
+                  child: Text('buttons.continueAnonymously'.tr()),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Nie masz konta?',
+                      'notAmember'.tr(),
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.switchPageCallback,
-                      child: const Text(
-                        'Zarejestruj się',
-                        style: TextStyle(
+                      child: Text(
+                        'registerNow'.tr(),
+                        style: const TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
