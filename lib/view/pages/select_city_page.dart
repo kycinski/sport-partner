@@ -138,7 +138,7 @@ class _SelectCityPageState extends State<SelectCityPage> {
 DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,
       child: Text(
-        item,
+        'cities.$item'.tr(),
         style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
     );
