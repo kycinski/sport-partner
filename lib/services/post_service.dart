@@ -29,4 +29,8 @@ class PostService {
   Future<void> addPost({required PostCreation postCreation, required String city}) async {
     await FirebaseFirestore.instance.collection('cities').doc(city).collection('posts').add(postCreation.toJson());
   }
+
+  Future<void> deletePost({required String postUid, required String city}) async {
+    await FirebaseFirestore.instance.collection('cities').doc(city).collection('posts').doc(postUid).delete();
+  }
 }

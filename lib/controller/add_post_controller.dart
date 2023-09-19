@@ -7,8 +7,7 @@ import 'package:sport_partner/services/post_service.dart';
 
 class AddPostController with ChangeNotifier {
   UserModel? _user;
-  final List<String> _skillLevels = ['beginner', 'intermediate', 'advanced'];
-  final List<String> _genders = ['all', 'women', 'men'];
+  final List<String> _genders = ['all', 'woman', 'man'];
   SkillLevel? _selectedSkillLevel;
   String _selectedGender = 'all';
   final double _minAge = 18;
@@ -21,7 +20,6 @@ class AddPostController with ChangeNotifier {
     _user = user;
   }
 
-  List<String> get skillLevels => _skillLevels;
   List<String> get genders => _genders;
   SkillLevel? get selectedSkillLevel => _selectedSkillLevel;
   String get selectedGender => _selectedGender;

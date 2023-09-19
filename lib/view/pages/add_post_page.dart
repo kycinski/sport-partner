@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/add_post_controller.dart';
@@ -67,7 +68,7 @@ class _AddPostPageState extends State<AddPostPage> {
                   spacing: 20,
                   children: addPostController.genders.map((gender) {
                     return FilterChip(
-                      label: Text(gender),
+                      label: Text('gender.$gender.plural'.tr()),
                       onSelected: (value) {
                         addPostController.setSelectedGender(gender);
                       },

@@ -1,6 +1,6 @@
 class DateToAgeConverter {
-  static int calculateAge(String stringDate) {
-    final birthDate = DateTime.parse(stringDate);
+  static int calculateAgeFromDateTime(DateTime dateTime) {
+    final birthDate = dateTime;
     final currentDate = DateTime.now();
     int age = currentDate.year - birthDate.year;
 
@@ -8,6 +8,13 @@ class DateToAgeConverter {
         (currentDate.month == birthDate.month && currentDate.day < birthDate.day)) {
       age--;
     }
+
+    return age;
+  }
+
+  static int calculateAgeFromStringDate(String stringDate) {
+    final birthDate = DateTime.parse(stringDate);
+    final age = calculateAgeFromDateTime(birthDate);
 
     return age;
   }

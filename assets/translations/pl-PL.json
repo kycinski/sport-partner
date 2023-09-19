@@ -32,6 +32,17 @@
         "intermediate": "średniozaawansowany",
         "advanced": "zaawansowany"
     },
+    "gender": {
+        "all": "wszyscy",
+        "man": {
+            "singular": "Męzczyzna",
+            "plural": "męzczyzn"
+        },
+        "woman": {
+            "singular": "Kobieta",
+            "plural": "kobiet"
+        }
+    },
     "hello": "Witaj {}",
     "notLoggedMessage": "Zaloguj się aby korzystać z pełnych mozliwosci Sport Partner",
     "email": "Email",
@@ -41,5 +52,6 @@
     "chooseYourCity": "Wybierz swoje miasto:",
     "notAmember": "Nie masz konta?",
     "registerNow": "Zarejestruj się",
-    "reply": "Odpowiedz"
+    "reply": "Odpowiedz",
+    "delete": "Usuń"
 }

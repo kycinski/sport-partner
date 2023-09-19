@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/edit_profile_controller.dart';
@@ -53,8 +54,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         children: [
                           Expanded(
                             child: RadioListTile(
-                              title: const Text('Mężczyzna', style: TextStyle(color: Colors.white)),
-                              value: 'M',
+                              title: Text('gender.man.singular'.tr(), style: const TextStyle(color: Colors.white)),
+                              value: 'man',
                               groupValue: editProfileController.selectedGender,
                               onChanged: (value) {
                                 editProfileController.selectGender(value!);
@@ -63,11 +64,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           ),
                           Expanded(
                             child: RadioListTile(
-                              title: const Text(
-                                'Kobieta',
-                                style: TextStyle(color: Colors.white),
+                              title: Text(
+                                'gender.woman.singular'.tr(),
+                                style: const TextStyle(color: Colors.white),
                               ),
-                              value: 'F',
+                              value: 'woman',
                               groupValue: editProfileController.selectedGender,
                               onChanged: (value) {
                                 editProfileController.selectGender(value!);
