@@ -53,5 +53,9 @@
     "notAmember": "Not a member?",
     "registerNow": "Register now",
     "reply": "Reply",
-    "delete": "Delete"
+    "delete": "Delete",
+    "description": "Description",
+    "addPost": "Add post",
+    "iAm": "I am:",
+    "wantPlayWith": "I want play with:"
 }

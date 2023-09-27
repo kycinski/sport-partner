@@ -41,14 +41,14 @@ class _AddPostPageState extends State<AddPostPage> {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            title: const Text('Dodaj post'),
+            title: Text('addPost'.tr()),
           ),
           body: Padding(
             padding: const EdgeInsets.all(30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Jestem:', style: TextStyle(color: Colors.black)),
+                Text('iAm'.tr(), style: TextStyle(color: Colors.black)),
                 Wrap(
                   spacing: 20,
                   children: SkillLevel.values.map((skillLevel) {
@@ -60,8 +60,8 @@ class _AddPostPageState extends State<AddPostPage> {
                         selected: addPostController.selectedSkillLevel == skillLevel ? true : false);
                   }).toList(),
                 ),
-                const Text(
-                  'Szukam:',
+                Text(
+                  'wantPlayWith'.tr(),
                   style: TextStyle(color: Colors.black),
                 ),
                 Wrap(
@@ -91,7 +91,7 @@ class _AddPostPageState extends State<AddPostPage> {
                 ),
                 CustomTextField(
                   controller: descriptionController,
-                  hintText: 'Description',
+                  hintText: 'description'.tr(),
                   obscureText: false,
                   minLines: 5,
                 ),
@@ -110,7 +110,7 @@ class _AddPostPageState extends State<AddPostPage> {
                         }
                       }
                     },
-                    child: const Text('Dodaj post'),
+                    child: Text('addPost'.tr()),
                   ),
                 ),
               ],

@@ -53,5 +53,9 @@
     "notAmember": "Nie masz konta?",
     "registerNow": "Zarejestruj się",
     "reply": "Odpowiedz",
-    "delete": "Usuń"
+    "delete": "Usuń",
+    "description": "Treść ogłoszenia",
+    "addPost": "Dodaj post",
+    "iAm": "Jestem:",
+    "wantPlayWith": "Chcę grać z:"
 }
