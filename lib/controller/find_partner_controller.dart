@@ -8,12 +8,17 @@ import 'package:sport_partner/services/post_service.dart';
 
 class FindPartnerController with ChangeNotifier {
   List<Post> _posts = [];
+  String? _categoryIdName;
 
   List<Post> get posts => _posts;
 
+  FindPartnerController(String categoriIdName) {
+    _categoryIdName = categoriIdName;
+  }
+
   Future<void> fetchPosts() async {
     final city = await CityService().getSelectedCity();
-    _posts = await PostService().fetchPostsFromFirestore(city: city!, category: 'tennis');
+    _posts = await PostService().fetchPostsFromFirestore(city: city!, category: _categoryIdName!);
     notifyListeners();
   }
 

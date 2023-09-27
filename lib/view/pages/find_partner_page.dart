@@ -7,12 +7,14 @@ import 'package:sport_partner/view/pages/add_post_page.dart';
 import 'package:sport_partner/view/widgets/post_card.dart';
 
 class FindPartnerPage extends StatelessWidget {
-  const FindPartnerPage({super.key});
+  const FindPartnerPage({super.key, required this.categoryIdName});
+
+  final String categoryIdName;
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => FindPartnerController(),
+      create: (context) => FindPartnerController(categoryIdName),
       builder: (context, child) {
         context.read<FindPartnerController>().fetchPosts();
         return Scaffold(
@@ -39,7 +41,7 @@ class FindPartnerPage extends StatelessWidget {
                   ? Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AddPostPage(),
+                        builder: (context) => AddPostPage(categoryIdName: categoryIdName),
                       ),
                     )
                   : ScaffoldMessenger.of(context).showSnackBar(

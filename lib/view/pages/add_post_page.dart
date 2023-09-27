@@ -7,7 +7,9 @@ import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
 
 class AddPostPage extends StatefulWidget {
-  const AddPostPage({super.key});
+  const AddPostPage({super.key, required this.categoryIdName});
+
+  final String categoryIdName;
 
   @override
   State<AddPostPage> createState() => _AddPostPageState();
@@ -35,7 +37,8 @@ class _AddPostPageState extends State<AddPostPage> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AddPostController(user: context.read<UserController>().user!),
+      create: (context) =>
+          AddPostController(user: context.read<UserController>().user!, categoryIdName: widget.categoryIdName),
       builder: (context, child) {
         final addPostController = context.watch<AddPostController>();
         return Scaffold(
@@ -48,7 +51,7 @@ class _AddPostPageState extends State<AddPostPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('iAm'.tr(), style: TextStyle(color: Colors.black)),
+                Text('iAm'.tr(), style: const TextStyle(color: Colors.black)),
                 Wrap(
                   spacing: 20,
                   children: SkillLevel.values.map((skillLevel) {
@@ -62,7 +65,7 @@ class _AddPostPageState extends State<AddPostPage> {
                 ),
                 Text(
                   'wantPlayWith'.tr(),
-                  style: TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.black),
                 ),
                 Wrap(
                   spacing: 20,

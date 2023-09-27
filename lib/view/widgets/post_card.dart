@@ -113,8 +113,8 @@ class PostCard extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: Text('Post niedostępny'),
-                              content: Text('Nie mozesz odpowiedziec na ten post'),
+                              title: const Text('Post niedostępny'),
+                              content: const Text('Nie mozesz odpowiedziec na ten post'),
                               actions: <Widget>[
                                 TextButton(
                                   child: const Text(

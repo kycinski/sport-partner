@@ -25,7 +25,13 @@ class CategoryDetailPage extends StatelessWidget {
                 text: 'mainOptions.findPartner'.tr().toUpperCase(),
                 imagePath: 'assets/images/find_partner.jpg',
                 onClick: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPartnerPage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => FindPartnerPage(
+                        categoryIdName: choosenCategory.idName,
+                      ),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 20),

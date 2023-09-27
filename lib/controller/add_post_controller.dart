@@ -14,10 +14,12 @@ class AddPostController with ChangeNotifier {
   final double _maxAge = 80;
   RangeValues _selectedAgeRange = const RangeValues(18, 80);
   String _description = '';
+  String? _categoryIdName;
   String? _error;
 
-  AddPostController({required UserModel user}) {
+  AddPostController({required UserModel user, required String categoryIdName}) {
     _user = user;
+    _categoryIdName = categoryIdName;
   }
 
   List<String> get genders => _genders;
@@ -67,7 +69,7 @@ class AddPostController with ChangeNotifier {
     final city = await CityService().getSelectedCity();
     final postCreation = PostCreation(
       userModel: _user!,
-      category: 'tennis',
+      category: _categoryIdName!,
       skillLevel: _selectedSkillLevel!,
       desiredGender: _selectedGender,
       desiredAgeRange: [_selectedAgeRange.start.toInt(), _selectedAgeRange.end.toInt()],
