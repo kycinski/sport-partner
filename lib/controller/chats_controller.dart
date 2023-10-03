@@ -15,7 +15,6 @@ class ChatsController with ChangeNotifier {
   }
 
   Stream<List<MessageModel>> getMessages(String chatId) {
-    print('stream');
     return ChatService().getMessages(chatId);
   }
 

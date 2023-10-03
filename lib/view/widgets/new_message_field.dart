@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 
-class NewMessageField extends StatelessWidget {
-  const NewMessageField({super.key, required this.controller, required this.onSend});
+class NewMessageField extends StatefulWidget {
+  const NewMessageField({super.key, required this.onSend});
 
-  final TextEditingController controller;
-  final void Function()? onSend;
+  final Function(String) onSend;
+
+  @override
+  State<NewMessageField> createState() => _NewMessageFieldState();
+}
+
+class _NewMessageFieldState extends State<NewMessageField> {
+  final _textController = TextEditingController();
+  final _focusNode = FocusNode();
+  String _enteredMessage = '';
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +30,27 @@ class NewMessageField extends StatelessWidget {
         children: [
           Expanded(
             child: TextField(
-              controller: controller,
+              controller: _textController,
+              focusNode: _focusNode,
               decoration: const InputDecoration(labelText: 'Send a message...'),
               onChanged: (value) {
-                // setState(() {
-                //   _enteredMesseage = value;
-                // });
+                setState(() {
+                  _enteredMessage = value;
+                });
               },
             ),
           ),
           IconButton(
-            onPressed: controller.text.trim().isEmpty ? null : onSend,
+            onPressed: _enteredMessage.trim().isEmpty
+                ? null
+                : () {
+                    widget.onSend(_enteredMessage);
+                    _focusNode.unfocus();
+                    setState(() {
+                      _textController.clear();
+                      _enteredMessage = '';
+                    });
+                  },
             icon: const Icon(Icons.send),
             color: Theme.of(context).primaryColor,
           ),
