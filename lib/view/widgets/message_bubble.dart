@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class MessageBubble extends StatelessWidget {
   const MessageBubble(
@@ -6,13 +7,13 @@ class MessageBubble extends StatelessWidget {
       required this.message,
       required this.isMe,
       required this.username,
-      required this.userImage,
+      required this.userImageUrl,
       required this.valueKey});
 
   final String message;
   final bool isMe;
   final String username;
-  final String userImage;
+  final String? userImageUrl;
   final Key valueKey;
 
   @override
@@ -55,9 +56,7 @@ class MessageBubble extends StatelessWidget {
               top: 0,
               left: isMe ? -5 : null,
               right: !isMe ? -5 : null,
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(userImage),
-              ),
+              child: ProfileImage(imageUrl: userImageUrl, size: 40),
             ),
           ],
         ),

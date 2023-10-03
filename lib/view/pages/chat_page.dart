@@ -41,14 +41,14 @@ class ChatPage extends StatelessWidget {
                               message: message.text,
                               isMe: true,
                               username: myUser.name!,
-                              userImage: myUser.profileImageUrl!,
+                              userImageUrl: myUser.profileImageUrl,
                               valueKey: ValueKey(message.text),
                             )
                           : MessageBubble(
                               message: message.text,
                               isMe: false,
                               username: chatListTileModel.interlocutorName,
-                              userImage: chatListTileModel.interlocutorImageUrl!,
+                              userImageUrl: chatListTileModel.interlocutorImageUrl,
                               valueKey: ValueKey(message.text),
                             );
                     },
