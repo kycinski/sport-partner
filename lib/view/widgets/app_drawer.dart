@@ -60,8 +60,10 @@ class AppDrawer extends StatelessWidget {
             style: const TextStyle(color: Colors.black),
           ),
         const SizedBox(height: 35),
-        ElevatedButton(
-          onPressed: () {
+        ListTile(
+          title: Text('buttons.editProfile'.tr()),
+          leading: const Icon(Icons.edit),
+          onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -69,10 +71,11 @@ class AppDrawer extends StatelessWidget {
               ),
             );
           },
-          child: Text('buttons.editProfile'.tr()),
         ),
-        ElevatedButton(
-          onPressed: () {
+        ListTile(
+          title: const Text('Messages'),
+          leading: const Icon(Icons.message),
+          onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -80,15 +83,14 @@ class AppDrawer extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Messages'),
         ),
-        ElevatedButton.icon(
-          onPressed: () async {
+        ListTile(
+          title: Text('buttons.logout'.tr()),
+          leading: const Icon(Icons.logout),
+          onTap: () async {
             userController.signOut();
           },
-          icon: const Icon(Icons.logout),
-          label: Text('buttons.logout'.tr()),
-        ),
+        )
       ],
     );
   }
@@ -100,13 +102,14 @@ class AppDrawer extends StatelessWidget {
           'notLoggedMessage'.tr(),
           style: const TextStyle(color: Colors.black),
         ),
-        ElevatedButton.icon(
-          onPressed: () async {
+        const SizedBox(height: 20),
+        ListTile(
+          title: Text('buttons.login'.tr()),
+          leading: const Icon(Icons.login),
+          onTap: () async {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginOrRegisterPage()));
           },
-          icon: const Icon(Icons.login),
-          label: Text('buttons.login'.tr()),
-        ),
+        )
       ],
     );
   }
