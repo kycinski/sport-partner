@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:sport_partner/controller/chats_controller.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/themes/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserController()),
+        ChangeNotifierProvider(create: (_) => ChatsController()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

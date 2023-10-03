@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/view/pages/chats_list_page.dart';
 import 'package:sport_partner/view/pages/edit_profile_page.dart';
 import 'package:sport_partner/view/pages/login_or_register.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
@@ -82,6 +83,17 @@ class AppDrawer extends StatelessWidget {
             );
           },
           child: Text('buttons.editProfile'.tr()),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChatsListPage(),
+              ),
+            );
+          },
+          child: Text('Messages'),
         ),
         ElevatedButton.icon(
           onPressed: () async {

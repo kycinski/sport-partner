@@ -6,5 +6,10 @@ class Place {
   final String address;
   final String url;
 
-  Place({required this.name, required this.coordinates, required this.address, required this.url});
+  Place({
+    required this.name,
+    required this.coordinates,
+    required this.address,
+    required this.url,
+  });
 }

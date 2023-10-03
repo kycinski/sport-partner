@@ -6,6 +6,7 @@ import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/enums/post_category.dart';
 import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/model/post.dart';
+import 'package:sport_partner/view/pages/chat_page.dart';
 import 'package:sport_partner/view/widgets/post_card_button.dart';
 
 class PostCard extends StatelessWidget {
@@ -102,7 +103,14 @@ class PostCard extends StatelessWidget {
                     return PostCardButton(
                       color: Colors.amber,
                       child: Text('reply'.tr()),
-                      onTap: () {},
+                      onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => ChatPage(),
+                        //   ),
+                        // );
+                      },
                     );
                   case PostCategory.unavailable:
                     return PostCardButton(
