@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/chats_controller.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/view/pages/chat_page.dart';
+import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class ChatsListPage extends StatelessWidget {
   const ChatsListPage({super.key});
@@ -13,28 +14,14 @@ class ChatsListPage extends StatelessWidget {
     context.read<ChatsController>().fetchChatList(userUid);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chats list'),
+        title: const Text('Chats list'),
       ),
       body: Consumer<ChatsController>(builder: (context, chatsController, _) {
         return ListView.builder(
           itemCount: chatsController.chats.length,
           itemBuilder: (context, index) {
             return ListTile(
-              leading: ClipOval(
-                child: chatsController.chats[index].interlocutorImageUrl != null
-                    ? Image.network(
-                        chatsController.chats[index].interlocutorImageUrl!,
-                        height: 40,
-                        width: 40,
-                        fit: BoxFit.cover,
-                      )
-                    : Image.asset(
-                        'assets/images/profile_picture.jpeg',
-                        height: 40,
-                        width: 40,
-                        fit: BoxFit.cover,
-                      ),
-              ),
+              leading: ProfileImage(imageUrl: chatsController.chats[index].interlocutorImageUrl, size: 40),
               title: Text(chatsController.chats[index].interlocutorName),
               onTap: () {
                 Navigator.push(

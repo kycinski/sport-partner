@@ -22,10 +22,11 @@ class ChatService {
       String? interlocutorImageUrl = interlocutor['profileImageUrl'];
       chats.add(
         ChatListTileModel(
-            chatId: chatId,
-            interlocutorUid: interlocutorUid,
-            interlocutorName: interlocutorName,
-            interlocutorImageUrl: interlocutorImageUrl),
+          chatId: chatId,
+          interlocutorUid: interlocutorUid,
+          interlocutorName: interlocutorName,
+          interlocutorImageUrl: interlocutorImageUrl,
+        ),
       );
     }
     return chats;

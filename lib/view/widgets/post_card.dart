@@ -8,29 +8,11 @@ import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/model/post.dart';
 import 'package:sport_partner/view/pages/chat_page.dart';
 import 'package:sport_partner/view/widgets/post_card_button.dart';
+import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class PostCard extends StatelessWidget {
   final Post post;
   const PostCard({super.key, required this.post});
-
-  Image _buildImage(String? profileImageUrl) {
-    const imageSize = 50.0;
-    if (profileImageUrl != null) {
-      return Image.network(
-        profileImageUrl,
-        height: imageSize,
-        width: imageSize,
-        fit: BoxFit.cover,
-      );
-    } else {
-      return Image.asset(
-        'assets/images/profile_picture.jpeg',
-        height: imageSize,
-        width: imageSize,
-        fit: BoxFit.cover,
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +39,7 @@ class PostCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipOval(
-                    child: _buildImage(post.profileImageUrl),
-                  ),
+                  ProfileImage(imageUrl: post.profileImageUrl, size: 50),
                   const SizedBox(width: 15),
                   Expanded(
                     child: Column(

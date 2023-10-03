@@ -6,6 +6,7 @@ import 'package:sport_partner/view/pages/chats_list_page.dart';
 import 'package:sport_partner/view/pages/edit_profile_page.dart';
 import 'package:sport_partner/view/pages/login_or_register.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
+import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -45,21 +46,7 @@ class AppDrawer extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 35),
-        ClipOval(
-          child: userController.user?.profileImageUrl != null
-              ? Image.network(
-                  userController.user!.profileImageUrl!,
-                  height: 70,
-                  width: 70,
-                  fit: BoxFit.cover,
-                )
-              : Image.asset(
-                  'assets/images/profile_picture.jpeg',
-                  height: 70,
-                  width: 70,
-                  fit: BoxFit.cover,
-                ),
-        ),
+        ProfileImage(imageUrl: userController.user!.profileImageUrl, size: 70),
         const SizedBox(height: 15),
         if (userController.user?.name == null)
           const Text(
@@ -93,7 +80,7 @@ class AppDrawer extends StatelessWidget {
               ),
             );
           },
-          child: Text('Messages'),
+          child: const Text('Messages'),
         ),
         ElevatedButton.icon(
           onPressed: () async {
