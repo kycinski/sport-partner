@@ -1,23 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class MessageModel {
   String authorId;
   String text;
-  // DateTime createdAt;
 
   MessageModel({required this.authorId, required this.text});
 
   factory MessageModel.fromJson(dynamic data) {
     return MessageModel(
-      authorId: data['userUid'],
+      authorId: data['userId'],
       text: data['text'],
-      // createdAt: data['createdAt'].toDate(),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'userUid': authorId,
+      'userId': authorId,
       'text': text,
-      // 'createdAt': createdAt.toString(),
+      'createdAt': Timestamp.now(),
     };
   }
 }

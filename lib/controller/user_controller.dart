@@ -22,8 +22,8 @@ class UserController with ChangeNotifier {
     await FirebaseAuth.instance.signOut();
   }
 
-  Future<void> setUserData({required String userUid}) async {
-    final userData = await UserService().getUserData(userUid: userUid);
+  Future<void> setUserData({required String userId}) async {
+    final userData = await UserService().getUserData(userId: userId);
     _userLoggedIn = true;
     _user = userData;
     notifyListeners();

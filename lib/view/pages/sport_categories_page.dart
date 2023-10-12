@@ -26,7 +26,7 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
     final userController = Provider.of<UserController>(context, listen: false);
     authStreamSubscription = FirebaseAuth.instance.authStateChanges().listen((event) async {
       if (event != null) {
-        await userController.setUserData(userUid: event.uid);
+        await userController.setUserData(userId: event.uid);
         print('zalogowano');
       } else {
         userController.resetState();

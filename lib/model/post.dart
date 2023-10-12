@@ -4,7 +4,7 @@ import 'package:sport_partner/helpers/date_to_age_converter.dart';
 
 class Post {
   String uid;
-  String userUid;
+  String userId;
   String name;
   int age;
   String description;
@@ -15,7 +15,7 @@ class Post {
 
   Post({
     required this.uid,
-    required this.userUid,
+    required this.userId,
     required this.name,
     required this.age,
     required this.description,
@@ -28,7 +28,7 @@ class Post {
   factory Post.fromJson(dynamic data, dynamic userData) {
     return Post(
       uid: data.id,
-      userUid: data['userRef'].id,
+      userId: data['userRef'].id,
       name: userData['name'],
       age: DateToAgeConverter.calculateAgeFromStringDate(userData['birthDate']),
       description: data['description'],

@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sport_partner/model/chat_list_tile_model.dart';
+import 'package:sport_partner/model/chat_info_model.dart';
 import 'package:sport_partner/model/message_model.dart';
 
 class ChatService {
-  Future<List<ChatListTileModel>> fetchChatsFromFirestore(String userUid) async {
+  Future<List<ChatInfoModel>> fetchChatsFromFirestore(String userUid) async {
     final userRef = FirebaseFirestore.instance.collection('users').doc(userUid);
 
     QuerySnapshot querySnapshot =
         await FirebaseFirestore.instance.collection('chats').where('participants', arrayContains: userRef).get();
-    List<ChatListTileModel> chats = [];
+    List<ChatInfoModel> chats = [];
     for (final doc in querySnapshot.docs) {
       var interlocutor;
       if (doc.get('participants')[0] != userRef) {
@@ -21,7 +21,7 @@ class ChatService {
       String interlocutorName = interlocutor['name'];
       String? interlocutorImageUrl = interlocutor['profileImageUrl'];
       chats.add(
-        ChatListTileModel(
+        ChatInfoModel(
           chatId: chatId,
           interlocutorUid: interlocutorUid,
           interlocutorName: interlocutorName,
@@ -37,7 +37,7 @@ class ChatService {
         .collection('chats')
         .doc(chatId)
         .collection('messages')
-        .orderBy('createdAt')
+        .orderBy('createdAt', descending: true)
         .snapshots()
         .map((querySnapshot) {
       List<MessageModel> messagesList = [];
@@ -46,5 +46,18 @@ class ChatService {
       }
       return messagesList;
     });
+  }
+
+  Future<void> postMessage(String chatId, MessageModel messageModel) async {
+    await FirebaseFirestore.instance.collection('chats').doc(chatId).collection('messages').add(messageModel.toJson());
+  }
+
+  Future<String> createNewChat(String userUid, String interlocutorId) async {
+    final userRef = FirebaseFirestore.instance.collection('users').doc(userUid);
+    final interlocutorRef = FirebaseFirestore.instance.collection('users').doc(interlocutorId);
+    final chatRef = await FirebaseFirestore.instance.collection('chats').add({
+      'participants': [userRef, interlocutorRef],
+    });
+    return chatRef.id;
   }
 }

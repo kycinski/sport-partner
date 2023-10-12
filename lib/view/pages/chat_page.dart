@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/chats_controller.dart';
 import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/model/chat_list_tile_model.dart';
+import 'package:sport_partner/model/chat_info_model.dart';
 import 'package:sport_partner/view/widgets/message_bubble.dart';
 import 'package:sport_partner/view/widgets/new_message_field.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   const ChatPage({super.key, required this.chatListTileModel});
 
-  final ChatListTileModel chatListTileModel;
+  final ChatInfoModel chatListTileModel;
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  late String? chatId;
+
+  @override
+  void initState() {
+    super.initState();
+    chatId = widget.chatListTileModel.chatId;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,44 +33,57 @@ class ChatPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 10),
           Expanded(
-            child: StreamBuilder(
-                stream: context.read<ChatsController>().getMessages(chatListTileModel.chatId),
-                builder: (context, chatSnapshot) {
-                  if (chatSnapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
+            child: chatId != null
+                ? StreamBuilder(
+                    stream: context.read<ChatsController>().getMessages(chatId!),
+                    builder: (context, chatSnapshot) {
+                      if (chatSnapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
 
-                  final chatDocs = chatSnapshot.data;
-                  return ListView.builder(
-                    itemCount: chatDocs!.length,
-                    itemBuilder: (context, index) {
-                      final message = chatDocs[index];
-                      return message.authorId == myUser!.uid
-                          ? MessageBubble(
-                              message: message.text,
-                              isMe: true,
-                              username: myUser.name!,
-                              userImageUrl: myUser.profileImageUrl,
-                              valueKey: ValueKey(message.text),
-                            )
-                          : MessageBubble(
-                              message: message.text,
-                              isMe: false,
-                              username: chatListTileModel.interlocutorName,
-                              userImageUrl: chatListTileModel.interlocutorImageUrl,
-                              valueKey: ValueKey(message.text),
-                            );
+                      final chatDocs = chatSnapshot.data;
+                      return ListView.builder(
+                        padding: const EdgeInsets.only(top: 10),
+                        reverse: true,
+                        itemCount: chatDocs!.length,
+                        itemBuilder: (context, index) {
+                          final message = chatDocs[index];
+                          return message.authorId == myUser!.uid
+                              ? MessageBubble(
+                                  message: message.text,
+                                  isMe: true,
+                                  username: myUser.name!,
+                                  userImageUrl: myUser.profileImageUrl,
+                                  valueKey: ValueKey(message.text),
+                                )
+                              : MessageBubble(
+                                  message: message.text,
+                                  isMe: false,
+                                  username: widget.chatListTileModel.interlocutorName,
+                                  userImageUrl: widget.chatListTileModel.interlocutorImageUrl,
+                                  valueKey: ValueKey(message.text),
+                                );
+                        },
+                      );
                     },
-                  );
-                }),
+                  )
+                : const SizedBox(),
           ),
           NewMessageField(
             onSend: (message) {
-              context.read<ChatsController>().sendMessage(message, myUser!.uid, chatListTileModel.chatId);
+              chatId != null
+                  ? context.read<ChatsController>().sendMessage(message, myUser!.uid, chatId!)
+                  : context
+                      .read<ChatsController>()
+                      .createNewChat(message, myUser!.uid, widget.chatListTileModel.interlocutorUid)
+                      .then((value) {
+                      setState(() {
+                        chatId = value;
+                      });
+                    });
             },
           ),
         ],

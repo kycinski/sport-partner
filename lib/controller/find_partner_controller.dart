@@ -38,7 +38,7 @@ class FindPartnerController with ChangeNotifier {
       return false;
     }
 
-    if (currentUser.uid == post.userUid) {
+    if (currentUser.uid == post.userId) {
       return PostCategory.myPost;
     }
     if (isGenderMatched() && isAgeMatched()) {

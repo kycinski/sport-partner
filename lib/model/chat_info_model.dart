@@ -1,10 +1,10 @@
-class ChatListTileModel {
-  final String chatId;
+class ChatInfoModel {
+  final String? chatId;
   final String interlocutorUid;
   final String interlocutorName;
   final String? interlocutorImageUrl;
 
-  ChatListTileModel({
+  ChatInfoModel({
     required this.chatId,
     required this.interlocutorUid,
     required this.interlocutorName,

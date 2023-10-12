@@ -130,14 +130,14 @@ class EditProfileController with ChangeNotifier {
 
   Future<void> _uploadUserImage() async {
     final imageUrl = await UserService().uploadUserImage(
-      userUid: _userModel!.uid,
+      userId: _userModel!.uid,
       imageFile: _pickedImage!,
     );
     _newImageUrl = imageUrl;
   }
 
   Future<void> _removeUserImageFromStorage() async {
-    await UserService().removeUserImage(userUid: _userModel!.uid);
+    await UserService().removeUserImage(userId: _userModel!.uid);
     _newImageUrl = null;
   }
 

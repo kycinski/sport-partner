@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sport_partner/controller/chats_controller.dart';
 import 'package:sport_partner/controller/find_partner_controller.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/enums/post_category.dart';
@@ -83,13 +84,20 @@ class PostCard extends StatelessWidget {
                     return PostCardButton(
                       color: Colors.amber,
                       child: Text('reply'.tr()),
-                      onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => ChatPage(),
-                        //   ),
-                        // );
+                      onTap: () async {
+                        await context
+                            .read<ChatsController>()
+                            .getChatInfoModelForUsers(myUser.uid, post.userId, post.name)
+                            .then((value) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChatPage(
+                                chatListTileModel: value,
+                              ),
+                            ),
+                          );
+                        });
                       },
                     );
                   case PostCategory.unavailable:
