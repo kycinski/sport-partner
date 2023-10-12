@@ -35,9 +35,10 @@ class _LoginPageState extends State<LoginPage> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 30),
-                Image.asset('assets/images/logo.png'),
-                const SizedBox(height: 10),
+                Image.asset(
+                  'assets/images/sport_partner_logo.png',
+                  height: 200,
+                ),
                 const Text(
                   'Welcome back you\'ve been missed!',
                   style: TextStyle(
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 15),
                 ElevatedButton(
                   onPressed: () => loginController.signUserIn(
                     email: emailController.text,
@@ -85,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: Text('buttons.login'.tr()),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(

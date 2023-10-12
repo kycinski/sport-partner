@@ -77,7 +77,10 @@ class _SelectCityPageState extends State<SelectCityPage> {
                 child: Column(
                   children: [
                     const SizedBox(height: 30),
-                    Image.asset('assets/images/logo.png'),
+                    Image.asset(
+                      'assets/images/sport_partner_logo.png',
+                      height: 200,
+                    ),
                     Text(
                       'chooseYourCity'.tr(),
                       style: const TextStyle(color: Colors.white),
