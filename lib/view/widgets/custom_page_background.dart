@@ -13,7 +13,7 @@ class CustomPageBackground extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: const AssetImage("assets/images/background_2.jpeg"),
+          image: const AssetImage("assets/images/tennis.jpeg"),
           alignment: Alignment.centerRight,
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
