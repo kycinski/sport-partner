@@ -10,12 +10,14 @@ class CustomPageBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: const AssetImage("assets/images/tennis.jpg"),
+          image: const AssetImage("assets/images/background_2.jpeg"),
+          alignment: Alignment.centerRight,
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
-            Colors.black.withOpacity(0.6),
+            Colors.black.withOpacity(0.3),
             BlendMode.darken,
           ),
         ),
