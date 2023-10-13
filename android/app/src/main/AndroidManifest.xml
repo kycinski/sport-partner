@@ -9,7 +9,7 @@
    </queries>
    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="sport_partner2"
+        android:label="Sport Partner"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data
