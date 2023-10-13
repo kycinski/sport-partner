@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/login_or_register_controller.dart';
+import 'package:sport_partner/controllers/login_or_register_controller.dart';
 import 'package:sport_partner/view/pages/login_or_register/widgets/login_methods_divider.dart';
 import 'package:sport_partner/view/pages/login_or_register/widgets/login_or_register_with_email_section.dart';
 import 'package:sport_partner/view/pages/login_or_register/widgets/social_login_methods.dart';

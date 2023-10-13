@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/find_place_controller.dart';
-import 'package:sport_partner/model/place.dart';
+import 'package:sport_partner/controllers/find_place_controller.dart';
+import 'package:sport_partner/models/place.dart';
 
 class MapPreview extends StatefulWidget {
   final LatLng initialCoordinates;

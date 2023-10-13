@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/find_place_controller.dart';
-import 'package:sport_partner/view/widgets/map_preview.dart';
-import 'package:sport_partner/view/widgets/places_list_component.dart';
+import 'package:sport_partner/controllers/find_place_controller.dart';
+import 'package:sport_partner/view/pages/find_place/widgets/map_preview.dart';
+import 'package:sport_partner/view/pages/find_place/widgets/places_list_component.dart';
 
 class FindPlacePage extends StatelessWidget {
   const FindPlacePage({super.key});

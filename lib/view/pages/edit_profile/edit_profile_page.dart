@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/edit_profile_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/controllers/edit_profile_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
 import 'package:sport_partner/view/widgets/custom_page_background.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
-import 'package:sport_partner/view/widgets/edit_photo.dart';
+import 'package:sport_partner/view/pages/edit_profile/widgets/edit_photo.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/chats_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/view/pages/chat_page.dart';
+import 'package:sport_partner/controllers/chats_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/view/pages/chat/chat_page.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class ChatsListPage extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:sport_partner/model/place.dart';
+import 'package:sport_partner/models/place.dart';
 
 class PlacesService {
   Future<List<Place>> fetchPlacesFromFirestore({required String city, required String category}) async {

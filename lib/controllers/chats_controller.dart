@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sport_partner/model/chat_info_model.dart';
-import 'package:sport_partner/model/message_model.dart';
+import 'package:sport_partner/models/chat_info_model.dart';
+import 'package:sport_partner/models/message_model.dart';
 import 'package:sport_partner/services/chat_service.dart';
 
 class ChatsController with ChangeNotifier {

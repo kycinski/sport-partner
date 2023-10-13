@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/view/pages/chats_list_page.dart';
-import 'package:sport_partner/view/pages/edit_profile_page.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/view/pages/chat/chats_list_page.dart';
+import 'package:sport_partner/view/pages/edit_profile/edit_profile_page.dart';
 import 'package:sport_partner/view/pages/login_or_register/login_or_register_page.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';

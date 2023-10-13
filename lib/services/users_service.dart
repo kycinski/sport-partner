@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:sport_partner/model/user_model.dart';
+import 'package:sport_partner/models/user_model.dart';
 
 class UserService {
   static const String _usersCollection = 'users';

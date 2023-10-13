@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:sport_partner/model/place.dart';
+import 'package:sport_partner/models/place.dart';
 import 'package:sport_partner/services/city_service.dart';
 import 'package:sport_partner/services/places_service.dart';
 import 'package:url_launcher/url_launcher.dart';

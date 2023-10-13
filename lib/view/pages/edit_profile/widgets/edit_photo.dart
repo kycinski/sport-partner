@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/edit_profile_controller.dart';
+import 'package:sport_partner/controllers/edit_profile_controller.dart';
 
 class EditPhoto extends StatelessWidget {
   const EditPhoto({super.key});

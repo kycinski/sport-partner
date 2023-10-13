@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:sport_partner/model/sport_category.dart';
-import 'package:sport_partner/view/pages/find_partner_page.dart';
-import 'package:sport_partner/view/pages/find_place_page.dart';
+import 'package:sport_partner/models/sport_category.dart';
+import 'package:sport_partner/view/pages/find_partner/find_partner_page.dart';
+import 'package:sport_partner/view/pages/find_place/find_place_page.dart';
 import 'package:sport_partner/view/widgets/main_image_button.dart';
 
 class CategoryDetailPage extends StatelessWidget {

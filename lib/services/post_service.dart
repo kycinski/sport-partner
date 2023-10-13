@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sport_partner/model/post.dart';
-import 'package:sport_partner/model/post_creation.dart';
+import 'package:sport_partner/models/post.dart';
+import 'package:sport_partner/models/post_creation.dart';
 
 class PostService {
   Future<List<Post>> fetchPostsFromFirestore({required String city, required String category}) async {

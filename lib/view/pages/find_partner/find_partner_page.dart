@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/find_partner_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/view/pages/add_post_page.dart';
-import 'package:sport_partner/view/widgets/post_card.dart';
+import 'package:sport_partner/controllers/find_partner_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/view/pages/find_partner/add_post_page.dart';
+import 'package:sport_partner/view/pages/find_partner/widgets/post_card.dart';
 
 class FindPartnerPage extends StatelessWidget {
   const FindPartnerPage({super.key, required this.categoryIdName});

@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:sport_partner/model/sport_category.dart';
+import 'package:sport_partner/models/sport_category.dart';
 
 class SportCategoriesData {
   static final List<SportCategory> _categories = [

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sport_partner/model/chat_info_model.dart';
-import 'package:sport_partner/model/message_model.dart';
+import 'package:sport_partner/models/chat_info_model.dart';
+import 'package:sport_partner/models/message_model.dart';
 
 class ChatService {
   Future<List<ChatInfoModel>> fetchChatsFromFirestore(String userUid) async {

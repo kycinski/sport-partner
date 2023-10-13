@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/chats_controller.dart';
-import 'package:sport_partner/controller/find_partner_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/controllers/chats_controller.dart';
+import 'package:sport_partner/controllers/find_partner_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
 import 'package:sport_partner/enums/post_category.dart';
 import 'package:sport_partner/enums/skill_level.dart';
-import 'package:sport_partner/model/post.dart';
-import 'package:sport_partner/view/pages/chat_page.dart';
-import 'package:sport_partner/view/widgets/post_card_button.dart';
+import 'package:sport_partner/models/post.dart';
+import 'package:sport_partner/view/pages/chat/chat_page.dart';
+import 'package:sport_partner/view/pages/find_partner/widgets/post_card_button.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';
 
 class PostCard extends StatelessWidget {

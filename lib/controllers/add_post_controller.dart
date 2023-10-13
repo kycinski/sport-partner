@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/enums/skill_level.dart';
-import 'package:sport_partner/model/post_creation.dart';
-import 'package:sport_partner/model/user_model.dart';
+import 'package:sport_partner/models/post_creation.dart';
+import 'package:sport_partner/models/user_model.dart';
 import 'package:sport_partner/services/city_service.dart';
 import 'package:sport_partner/services/post_service.dart';
 

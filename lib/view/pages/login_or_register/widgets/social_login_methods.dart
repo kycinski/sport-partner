@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/login_or_register_controller.dart';
+import 'package:sport_partner/controllers/login_or_register_controller.dart';
 import 'package:sport_partner/view/pages/login_or_register/widgets/square_tile.dart';
 
 class SocialLoginMethods extends StatelessWidget {

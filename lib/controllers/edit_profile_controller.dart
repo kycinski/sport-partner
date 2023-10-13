@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/model/user_model.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/models/user_model.dart';
 import 'package:sport_partner/services/users_service.dart';
 
 class EditProfileController with ChangeNotifier {

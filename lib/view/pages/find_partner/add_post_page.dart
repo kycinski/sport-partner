@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/add_post_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
+import 'package:sport_partner/controllers/add_post_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
 import 'package:sport_partner/enums/skill_level.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
 

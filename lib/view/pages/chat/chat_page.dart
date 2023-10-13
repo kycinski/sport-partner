@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_partner/controller/chats_controller.dart';
-import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/model/chat_info_model.dart';
-import 'package:sport_partner/view/widgets/message_bubble.dart';
-import 'package:sport_partner/view/widgets/new_message_field.dart';
+import 'package:sport_partner/controllers/chats_controller.dart';
+import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/models/chat_info_model.dart';
+import 'package:sport_partner/view/pages/chat/widgets/message_bubble.dart';
+import 'package:sport_partner/view/pages/chat/widgets/new_message_field.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key, required this.chatListTileModel});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/enums/post_category.dart';
 import 'package:sport_partner/helpers/date_to_age_converter.dart';
-import 'package:sport_partner/model/post.dart';
-import 'package:sport_partner/model/user_model.dart';
+import 'package:sport_partner/models/post.dart';
+import 'package:sport_partner/models/user_model.dart';
 import 'package:sport_partner/services/city_service.dart';
 import 'package:sport_partner/services/post_service.dart';
 
