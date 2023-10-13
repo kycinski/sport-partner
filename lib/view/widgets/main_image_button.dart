@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class MainImageButton extends StatelessWidget {
   final String text;
@@ -34,8 +35,11 @@ class MainImageButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         onTap: onClick,
         child: Center(
-          child: Text(
+          child: GradientText(
             text,
+            colors: [Colors.grey.shade300, Colors.white],
+            gradientType: GradientType.linear,
+            textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),

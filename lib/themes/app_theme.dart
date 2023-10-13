@@ -6,7 +6,17 @@ class AppTheme {
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: Colors.white, fontSize: 18),
       bodySmall: TextStyle(fontSize: 14),
-      headlineMedium: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
+      headlineMedium: TextStyle(
+        shadows: <Shadow>[
+          Shadow(
+            offset: Offset(3, 3),
+            blurRadius: 5.0,
+            color: Colors.black,
+          ),
+        ],
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }
