@@ -23,7 +23,7 @@ class CategoryDetailPage extends StatelessWidget {
             children: [
               MainImageButton(
                 text: 'mainOptions.findPartner'.tr().toUpperCase(),
-                imagePath: 'assets/images/find_partner.jpg',
+                imagePath: 'assets/images/find_partner.jpeg',
                 onClick: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -37,13 +37,13 @@ class CategoryDetailPage extends StatelessWidget {
               const SizedBox(height: 20),
               MainImageButton(
                 text: 'mainOptions.gameRules'.tr().toUpperCase(),
-                imagePath: 'assets/images/rules.jpg',
+                imagePath: 'assets/images/rules.jpeg',
                 onClick: () {},
               ),
               const SizedBox(height: 20),
               MainImageButton(
                 text: 'mainOptions.findPlace'.tr().toUpperCase(),
-                imagePath: 'assets/images/find_place.jpg',
+                imagePath: 'assets/images/find_place.jpeg',
                 onClick: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPlacePage()));
                 },

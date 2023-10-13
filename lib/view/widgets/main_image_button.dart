@@ -15,7 +15,7 @@ class MainImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      height: 150,
+      height: MediaQuery.of(context).size.height / 4,
       width: double.infinity,
       decoration: BoxDecoration(
           image: DecorationImage(
