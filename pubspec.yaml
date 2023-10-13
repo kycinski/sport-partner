@@ -51,6 +51,7 @@ dependencies:
   flutter_cache_manager: ^3.3.1
   firebase_storage: ^11.2.6
   easy_localization: ^3.0.3
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,13 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  adaptive_icon_foreground: "assets/images/sport_partner_icon_adaptive.png"
+  adaptive_icon_background: "#ffffff"
+  image_path: "assets/images/sport_partner_icon.png"
 
 # The following section is specific to Flutter packages.
 flutter:

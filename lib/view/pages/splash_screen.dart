@@ -9,8 +9,10 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   Future<bool> _checkSelectedCity() async {
-    final selectedCity = await CityService().getSelectedCity();
-    return selectedCity != null && selectedCity.isNotEmpty;
+    return Future.delayed(const Duration(milliseconds: 300), () async {
+      final selectedCity = await CityService().getSelectedCity();
+      return selectedCity != null && selectedCity.isNotEmpty;
+    });
   }
 
   @override
@@ -18,6 +20,14 @@ class SplashScreen extends StatelessWidget {
     return FutureBuilder(
       future: _checkSelectedCity(),
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Container(
+            color: Colors.white,
+            child: Center(
+              child: Image.asset('assets/images/sport_partner_icon.png'),
+            ),
+          );
+        }
         if (snapshot.data == true) {
           return const SportCategoriesPage();
         } else {
