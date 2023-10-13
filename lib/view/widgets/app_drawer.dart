@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
 import 'package:sport_partner/view/pages/chats_list_page.dart';
 import 'package:sport_partner/view/pages/edit_profile_page.dart';
-import 'package:sport_partner/view/pages/login_or_register.dart';
+import 'package:sport_partner/view/pages/login_or_register/login_or_register_page.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';
 
@@ -49,9 +49,9 @@ class AppDrawer extends StatelessWidget {
         ProfileImage(imageUrl: userController.user!.profileImageUrl, size: 70),
         const SizedBox(height: 15),
         if (userController.user?.name == null)
-          const Text(
-            'Aby publikować posty oraz odpowiadać na ogłoszenia uzupełnij swój profil',
-            style: TextStyle(color: Colors.black),
+          Text(
+            'completeYourProfileToPublishPosts'.tr(),
+            style: const TextStyle(color: Colors.black),
             textAlign: TextAlign.center,
           )
         else
@@ -59,7 +59,7 @@ class AppDrawer extends StatelessWidget {
             'hello'.tr(args: [userController.user!.name!]),
             style: const TextStyle(color: Colors.black),
           ),
-        const SizedBox(height: 35),
+        const SizedBox(height: 15),
         ListTile(
           title: Text('buttons.editProfile'.tr()),
           leading: const Icon(Icons.edit),
@@ -73,7 +73,7 @@ class AppDrawer extends StatelessWidget {
           },
         ),
         ListTile(
-          title: const Text('Messages'),
+          title: Text('buttons.messages'.tr()),
           leading: const Icon(Icons.message),
           onTap: () {
             Navigator.push(
@@ -98,16 +98,18 @@ class AppDrawer extends StatelessWidget {
   Widget _buildAppDrawerForNotLoggedUser(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 35),
         Text(
           'notLoggedMessage'.tr(),
           style: const TextStyle(color: Colors.black),
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
         ListTile(
           title: Text('buttons.login'.tr()),
           leading: const Icon(Icons.login),
           onTap: () async {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginOrRegisterPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
           },
         )
       ],

@@ -21,10 +21,12 @@
     "buttons": {
         "continue": "Kontynuuj",
         "login": "Zaloguj",
+        "register": "Zarejestruj",
         "logout": "Wyloguj",
         "changeCity": "Zmień miasto",
         "continueAnonymously": "Kontynuuj anonimowo",
         "editProfile": "Edytuj profil",
+        "messages": "Wiadomości",
         "save": "Zapisz"
     },
     "skillLevel": {
@@ -35,27 +37,32 @@
     "gender": {
         "all": "wszyscy",
         "man": {
-            "singular": "Męzczyzna",
-            "plural": "męzczyzn"
+            "singular": "Mężczyzna",
+            "plural": "mężczyzni"
         },
         "woman": {
             "singular": "Kobieta",
-            "plural": "kobiet"
+            "plural": "kobiety"
         }
     },
     "hello": "Witaj {}",
-    "notLoggedMessage": "Zaloguj się aby korzystać z pełnych mozliwosci Sport Partner",
+    "notLoggedMessage": "Zaloguj się aby korzystać z pełnych możliwosci Sport Partner",
     "email": "Email",
     "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
     "name": "Imię",
     "orContinueWith": "Lub kontynuuj z",
     "chooseYourCity": "Wybierz swoje miasto:",
     "notAmember": "Nie masz konta?",
     "registerNow": "Zarejestruj się",
+    "alreadyHaveAnAccount": "Juz masz konto?",
+    "logIn": "Zaloguj się",
     "reply": "Odpowiedz",
     "delete": "Usuń",
     "description": "Treść ogłoszenia",
     "addPost": "Dodaj post",
     "iAm": "Jestem:",
-    "wantPlayWith": "Chcę grać z:"
+    "wantPlayWith": "Chcę grać z:",
+    "LogInAndFindYourPerfectSportsPartnerToday": "Zaloguj się i znajdź swojego idealnego partnera sportowego już dziś!",
+    "completeYourProfileToPublishPosts": "Aby publikować posty oraz odpowiadać na ogłoszenia uzupełnij swój profil"
 }

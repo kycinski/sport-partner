@@ -21,10 +21,12 @@
     "buttons": {
         "continue": "Continue",
         "login": "Login",
+        "register": "Register",
         "logout": "Logout",
         "changeCity": "Change city",
         "continueAnonymously": "Continue anonymously",
         "editProfile": "Edit profile",
+        "messages": "Messages",
         "save": "Save"
     },
     "skillLevel": {
@@ -47,15 +49,20 @@
     "notLoggedMessage": "Log in to use the full features of Sport Partner",
     "email": "Email",
     "password": "Password",
+    "confirmPassword": "Confirm password",
     "name": "Name",
     "orContinueWith": "Or continue with",
     "chooseYourCity": "Choose your city:",
     "notAmember": "Not a member?",
     "registerNow": "Register now",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "logIn": "Log in",
     "reply": "Reply",
     "delete": "Delete",
     "description": "Description",
     "addPost": "Add post",
     "iAm": "I am:",
-    "wantPlayWith": "I want play with:"
+    "wantPlayWith": "I want play with:",
+    "LogInAndFindYourPerfectSportsPartnerToday": "Log in and find your perfect sports partner today!",
+    "completeYourProfileToPublishPosts": "Complete your profile to reply and create posts"
 }
