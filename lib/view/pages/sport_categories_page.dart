@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controller/user_controller.dart';
-import 'package:sport_partner/model/sport_categories_data.dart';
+import 'package:sport_partner/data/sport_categories_data.dart';
 import 'package:sport_partner/view/pages/category_detail_page.dart';
 import 'package:sport_partner/view/widgets/app_drawer.dart';
 import 'package:sport_partner/view/widgets/main_image_button.dart';
