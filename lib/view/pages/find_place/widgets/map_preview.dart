@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/find_place_controller.dart';
 import 'package:sport_partner/helpers/url_launcher.dart';
 import 'package:sport_partner/models/place.dart';
-import 'package:sport_partner/view/pages/find_place/widgets/cached_network_tile_provider.dart';
+import 'package:sport_partner/view/pages/find_place/cached_network_tile_provider.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/map_attribution.dart';
 
 class MapPreview extends StatefulWidget {
