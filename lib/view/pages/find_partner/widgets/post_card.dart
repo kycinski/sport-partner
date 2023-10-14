@@ -22,7 +22,7 @@ class PostCard extends StatelessWidget {
     return Container(
       height: 180,
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(245, 245, 245, 1),
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
