@@ -15,28 +15,36 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(children: [
-            Consumer<UserController>(
-              builder: (context, userController, child) {
-                return userController.userLoggedIn
-                    ? _buildAppDrawerForLoggedUser(userController, context)
-                    : _buildAppDrawerForNotLoggedUser(context);
-              },
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/gradient.jpeg'),
+              fit: BoxFit.cover,
             ),
-            const Spacer(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const SelectCityPage(),
-                  ),
-                );
-              },
-              child: Text('buttons.changeCity'.tr()),
-            ),
-          ]),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(children: [
+              Consumer<UserController>(
+                builder: (context, userController, child) {
+                  return userController.userLoggedIn
+                      ? _buildAppDrawerForLoggedUser(userController, context)
+                      : _buildAppDrawerForNotLoggedUser(context);
+                },
+              ),
+              const Spacer(),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SelectCityPage(),
+                    ),
+                  );
+                },
+                child: Text('buttons.changeCity'.tr()),
+              ),
+            ]),
+          ),
         ),
       ),
     );
@@ -60,36 +68,45 @@ class AppDrawer extends StatelessWidget {
             style: const TextStyle(color: Colors.black),
           ),
         const SizedBox(height: 15),
-        ListTile(
-          title: Text('buttons.editProfile'.tr()),
-          leading: const Icon(Icons.edit),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const EditProfilePage(),
-              ),
-            );
-          },
+        Material(
+          color: Colors.transparent,
+          child: ListTile(
+            title: Text('buttons.editProfile'.tr()),
+            leading: const Icon(Icons.edit),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditProfilePage(),
+                ),
+              );
+            },
+          ),
         ),
-        ListTile(
-          title: Text('buttons.messages'.tr()),
-          leading: const Icon(Icons.message),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ChatsListPage(),
-              ),
-            );
-          },
+        Material(
+          color: Colors.transparent,
+          child: ListTile(
+            title: Text('buttons.messages'.tr()),
+            leading: const Icon(Icons.message),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ChatsListPage(),
+                ),
+              );
+            },
+          ),
         ),
-        ListTile(
-          title: Text('buttons.logout'.tr()),
-          leading: const Icon(Icons.logout),
-          onTap: () async {
-            userController.signOut();
-          },
+        Material(
+          color: Colors.transparent,
+          child: ListTile(
+            title: Text('buttons.logout'.tr()),
+            leading: const Icon(Icons.logout),
+            onTap: () async {
+              userController.signOut();
+            },
+          ),
         )
       ],
     );

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/chats_controller.dart';
 import 'package:sport_partner/controllers/user_controller.dart';
 import 'package:sport_partner/models/chat_info_model.dart';
+import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/chat/widgets/message_bubble.dart';
 import 'package:sport_partner/view/pages/chat/widgets/new_message_field.dart';
 
@@ -30,6 +31,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chat'),
+        flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
       body: Column(
         children: [

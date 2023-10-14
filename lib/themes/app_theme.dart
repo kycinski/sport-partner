@@ -19,4 +19,14 @@ class AppTheme {
       ),
     ),
   );
+
+  static Widget? defaultAppBarTheme = Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [Colors.amber.shade500, Colors.amber.shade200],
+      ),
+    ),
+  );
 }

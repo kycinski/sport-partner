@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/chats_controller.dart';
 import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/chat/chat_page.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';
 
@@ -15,7 +16,9 @@ class ChatsListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chats list'),
+        flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
+      backgroundColor: Colors.grey.shade200,
       body: Consumer<ChatsController>(builder: (context, chatsController, _) {
         return ListView.builder(
           itemCount: chatsController.chats.length,

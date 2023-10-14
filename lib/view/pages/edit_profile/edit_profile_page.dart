@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/edit_profile_controller.dart';
 import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/widgets/custom_page_background.dart';
 import 'package:sport_partner/view/widgets/custom_text_field.dart';
 import 'package:sport_partner/view/pages/edit_profile/widgets/edit_photo.dart';
@@ -40,6 +41,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               title: const Text('Edytuj profil'),
+              flexibleSpace: AppTheme.defaultAppBarTheme,
             ),
             body: SingleChildScrollView(
               child: Center(

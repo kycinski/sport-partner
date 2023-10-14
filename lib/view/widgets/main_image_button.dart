@@ -15,32 +15,29 @@ class MainImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
-      height: MediaQuery.of(context).size.height / 4,
-      width: double.infinity,
-      decoration: BoxDecoration(
+    return Material(
+      borderRadius: BorderRadius.circular(20),
+      child: Ink(
+        height: MediaQuery.of(context).size.height / 4,
+        width: double.infinity,
+        decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(imagePath),
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.25),
-              offset: const Offset(0, 4),
-              blurRadius: 4,
-            )
-          ]),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: onClick,
-        child: Center(
-          child: GradientText(
-            text,
-            colors: [Colors.grey.shade300, Colors.white],
-            gradientType: GradientType.linear,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineMedium,
+        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: onClick,
+          child: Center(
+            child: GradientText(
+              text,
+              colors: [Colors.grey.shade300, Colors.white],
+              gradientType: GradientType.linear,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ),
         ),
       ),

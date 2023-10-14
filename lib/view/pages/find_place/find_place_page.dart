@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/find_place_controller.dart';
+import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/map_preview.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/places_list_component.dart';
 
@@ -17,6 +18,7 @@ class FindPlacePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text('mainOptions.findPlace'.tr()),
+            flexibleSpace: AppTheme.defaultAppBarTheme,
           ),
           body: SafeArea(
             child: Padding(
