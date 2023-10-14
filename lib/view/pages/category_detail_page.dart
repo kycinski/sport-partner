@@ -49,7 +49,13 @@ class CategoryDetailPage extends StatelessWidget {
                   text: 'mainOptions.findPlace'.tr().toUpperCase(),
                   imagePath: 'assets/images/find_place.jpeg',
                   onClick: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FindPlacePage()));
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => FindPlacePage(
+                          categoryId: choosenCategory.idName,
+                        ),
+                      ),
+                    );
                   },
                 ),
               ],

@@ -28,6 +28,7 @@ class MainImageButton extends StatelessWidget {
       ),
       child: Material(
         borderRadius: BorderRadius.circular(20),
+        color: Colors.transparent,
         child: Ink(
           height: MediaQuery.of(context).size.height / 4,
           width: double.infinity,

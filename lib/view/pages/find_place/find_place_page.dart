@@ -6,9 +6,12 @@ import 'package:sport_partner/controllers/find_place_controller.dart';
 import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/map_preview.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/places_list_component.dart';
+import 'package:sport_partner/view/widgets/custom_gradient_background.dart';
 
 class FindPlacePage extends StatelessWidget {
-  const FindPlacePage({super.key});
+  const FindPlacePage({super.key, required this.categoryId});
+
+  final String categoryId;
 
   @override
   Widget build(BuildContext context) {
@@ -21,34 +24,42 @@ class FindPlacePage extends StatelessWidget {
             flexibleSpace: AppTheme.defaultAppBarTheme,
           ),
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: FutureBuilder(
-                future: Provider.of<FindPlaceController>(context, listen: false).fetchPlaces(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  } else {
-                    return Consumer<FindPlaceController>(
-                      builder: (context, mapData, child) {
-                        return Column(
-                          children: [
-                            MapPreview(
-                              initialCoordinates: const LatLng(51.1270779, 16.9918639),
-                              places: mapData.placesList,
-                            ),
-                            const SizedBox(height: 20),
-                            PlacesListComponent(
-                              places: mapData.placesList,
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  }
-                },
+            child: CustomGradientBackground(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: FutureBuilder(
+                  future: Provider.of<FindPlaceController>(context, listen: false).fetchPlaces(categoryId),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      return Consumer<FindPlaceController>(
+                        builder: (context, mapData, child) {
+                          return Column(
+                            children: [
+                              Flexible(
+                                flex: 2,
+                                child: MapPreview(
+                                  initialCoordinates: const LatLng(51.1270779, 16.9918639),
+                                  places: mapData.placesList,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Flexible(
+                                flex: 1,
+                                child: PlacesListComponent(
+                                  places: mapData.placesList,
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  },
+                ),
               ),
             ),
           ),
