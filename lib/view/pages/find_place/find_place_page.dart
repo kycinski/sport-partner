@@ -28,7 +28,7 @@ class FindPlacePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: FutureBuilder(
-                  future: Provider.of<FindPlaceController>(context, listen: false).fetchPlaces(categoryId),
+                  future: context.read<FindPlaceController>().fetchPlaces(categoryId),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
@@ -36,21 +36,21 @@ class FindPlacePage extends StatelessWidget {
                       );
                     } else {
                       return Consumer<FindPlaceController>(
-                        builder: (context, mapData, child) {
+                        builder: (context, findPlaceController, child) {
                           return Column(
                             children: [
                               Flexible(
                                 flex: 2,
                                 child: MapPreview(
                                   initialCoordinates: const LatLng(51.1270779, 16.9918639),
-                                  places: mapData.placesList,
+                                  places: findPlaceController.placesList,
                                 ),
                               ),
                               const SizedBox(height: 20),
                               Flexible(
                                 flex: 1,
                                 child: PlacesListComponent(
-                                  places: mapData.placesList,
+                                  places: findPlaceController.placesList,
                                 ),
                               ),
                             ],

@@ -22,10 +22,18 @@ class MapPreview extends StatefulWidget {
 }
 
 class _MapPreviewState extends State<MapPreview> {
+  late MapController _mapController;
   @override
   void initState() {
     super.initState();
-    Provider.of<FindPlaceController>(context, listen: false).setMapController();
+    _mapController = MapController();
+    Provider.of<FindPlaceController>(context, listen: false).setMapController(_mapController);
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
   }
 
   @override
@@ -49,7 +57,7 @@ class _MapPreviewState extends State<MapPreview> {
         borderRadius: BorderRadius.circular(20),
         child: FlutterMap(
           options: MapOptions(center: widget.initialCoordinates, zoom: 11),
-          mapController: Provider.of<FindPlaceController>(context, listen: false).mapController,
+          mapController: _mapController,
           nonRotatedChildren: [
             MapAttribution(
               source: Text(

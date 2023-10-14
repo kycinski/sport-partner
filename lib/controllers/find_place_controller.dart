@@ -13,12 +13,8 @@ class FindPlaceController with ChangeNotifier {
   MapController? get mapController => _mapController;
   List<Place> get placesList => _placesList;
 
-  void setMapController() {
-    _mapController = MapController();
-  }
-
-  void disposeMapController() {
-    _mapController?.dispose();
+  void setMapController(MapController mapController) {
+    _mapController = mapController;
   }
 
   Future<void> fetchPlaces(String categoryId) async {
