@@ -15,7 +15,7 @@ class SelectCityPage extends StatefulWidget {
 
 class _SelectCityPageState extends State<SelectCityPage> {
   final cityService = CityService();
-  final cities = CitiesData().cities;
+  final cities = CitiesData().citiesNames;
   String? _selectedCity;
   late Future<void> _setInitialData;
 

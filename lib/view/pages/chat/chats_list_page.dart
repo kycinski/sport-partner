@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/chats_controller.dart';
@@ -15,7 +16,7 @@ class ChatsListPage extends StatelessWidget {
     context.read<ChatsController>().fetchChatList(userUid);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chats list'),
+        title: Text('chatsList'.tr()),
         flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
       backgroundColor: Colors.grey.shade200,

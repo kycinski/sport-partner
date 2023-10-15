@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/chats_controller.dart';
@@ -30,7 +31,7 @@ class _ChatPageState extends State<ChatPage> {
     final myUser = context.read<UserController>().user;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chat'),
+        title: Text('chat'.tr()),
         flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
       body: Column(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_partner/enums/skill_level.dart';
-import 'package:sport_partner/helpers/date_to_age_converter.dart';
+import 'package:sport_partner/utils/date_to_age_converter.dart';
 
 class Post {
   String uid;

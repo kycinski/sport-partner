@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/find_place_controller.dart';
-import 'package:sport_partner/helpers/url_launcher.dart';
+import 'package:sport_partner/utils/url_launcher.dart';
 import 'package:sport_partner/models/place.dart';
 
 class PlacesListComponent extends StatelessWidget {

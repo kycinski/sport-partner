@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/find_place_controller.dart';
 import 'package:sport_partner/themes/app_theme.dart';
@@ -42,7 +41,7 @@ class FindPlacePage extends StatelessWidget {
                               Flexible(
                                 flex: 2,
                                 child: MapPreview(
-                                  initialCoordinates: const LatLng(51.1270779, 16.9918639),
+                                  initialCoordinates: findPlaceController.initialCoordinates,
                                   places: findPlaceController.placesList,
                                 ),
                               ),

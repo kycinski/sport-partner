@@ -115,19 +115,25 @@ class AppDrawer extends StatelessWidget {
   Widget _buildAppDrawerForNotLoggedUser(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 35),
+        Image.asset(
+          'assets/images/sport_partner_logo.png',
+          scale: 6,
+        ),
         Text(
           'notLoggedMessage'.tr(),
           style: const TextStyle(color: Colors.black),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
-        ListTile(
-          title: Text('buttons.login'.tr()),
-          leading: const Icon(Icons.login),
-          onTap: () async {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
-          },
+        Material(
+          color: Colors.transparent,
+          child: ListTile(
+            title: Text('buttons.login'.tr()),
+            leading: const Icon(Icons.login),
+            onTap: () async {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+            },
+          ),
         )
       ],
     );

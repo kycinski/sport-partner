@@ -3,7 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/find_place_controller.dart';
-import 'package:sport_partner/helpers/url_launcher.dart';
+import 'package:sport_partner/utils/url_launcher.dart';
 import 'package:sport_partner/models/place.dart';
 import 'package:sport_partner/view/pages/find_place/cached_network_tile_provider.dart';
 import 'package:sport_partner/view/pages/find_place/widgets/map_attribution.dart';
@@ -23,11 +23,12 @@ class MapPreview extends StatefulWidget {
 
 class _MapPreviewState extends State<MapPreview> {
   late MapController _mapController;
+
   @override
   void initState() {
     super.initState();
     _mapController = MapController();
-    Provider.of<FindPlaceController>(context, listen: false).setMapController(_mapController);
+    context.read<FindPlaceController>().setMapController(_mapController);
   }
 
   @override
