@@ -8,9 +8,9 @@ import 'package:sport_partner/view/pages/find_place/widgets/places_list_componen
 import 'package:sport_partner/view/widgets/custom_gradient_background.dart';
 
 class FindPlacePage extends StatelessWidget {
-  const FindPlacePage({super.key, required this.categoryId});
+  const FindPlacePage({super.key, required this.categoryIdName});
 
-  final String categoryId;
+  final String categoryIdName;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class FindPlacePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: FutureBuilder(
-                  future: context.read<FindPlaceController>().fetchPlaces(categoryId),
+                  future: context.read<FindPlaceController>().fetchPlaces(categoryIdName),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(

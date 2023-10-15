@@ -4,6 +4,7 @@ import 'package:sport_partner/models/sport_category.dart';
 import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/find_partner/find_partner_page.dart';
 import 'package:sport_partner/view/pages/find_place/find_place_page.dart';
+import 'package:sport_partner/view/pages/game_rules_page.dart';
 import 'package:sport_partner/view/widgets/custom_gradient_background.dart';
 import 'package:sport_partner/view/widgets/main_image_button.dart';
 
@@ -16,7 +17,7 @@ class CategoryDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(choosenCategory.name),
+        title: Text('categories.${choosenCategory.name}'.tr()),
         flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
       body: SafeArea(
@@ -32,7 +33,7 @@ class CategoryDetailPage extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => FindPartnerPage(
-                          categoryIdName: choosenCategory.idName,
+                          categoryIdName: choosenCategory.name,
                         ),
                       ),
                     );
@@ -42,7 +43,15 @@ class CategoryDetailPage extends StatelessWidget {
                 MainImageButton(
                   text: 'mainOptions.gameRules'.tr().toUpperCase(),
                   imagePath: 'assets/images/rules.jpeg',
-                  onClick: () {},
+                  onClick: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => GameRulesPage(
+                          categoryIdName: choosenCategory.name,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(height: 20),
                 MainImageButton(
@@ -52,7 +61,7 @@ class CategoryDetailPage extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => FindPlacePage(
-                          categoryId: choosenCategory.idName,
+                          categoryIdName: choosenCategory.name,
                         ),
                       ),
                     );

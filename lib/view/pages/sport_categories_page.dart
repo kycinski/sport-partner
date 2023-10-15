@@ -65,7 +65,7 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
             itemBuilder: (context, index) {
               return MainImageButton(
                 text: categories[index].name,
-                imagePath: categories[index].image,
+                imagePath: categories[index].imagePath,
                 onClick: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => CategoryDetailPage(

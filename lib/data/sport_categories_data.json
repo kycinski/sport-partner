@@ -1,0 +1,45 @@
+{
+    "tennis": {
+      "imagePath": "tennis_image.jpg",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Rule 1",
+            "ruleDescription": "Description of rule 1 in English"
+          },
+          {
+            "ruleTitle": "Rule 2",
+            "ruleDescription": "Description of rule 2 in English"
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Zasada 1",
+            "ruleDescription": "Opis zasady 1 po polsku"
+          },
+          {
+            "ruleTitle": "Zasada 2",
+            "ruleDescription": "Opis zasady 2 po polsku"
+          }
+        ]
+      }
+    },
+    "squash": {
+      "imagePath": "squash_image.jpg",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Rule 1",
+            "ruleDescription": "Description of rule 1 in English"
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Zasada 1",
+            "ruleDescription": "Opis zasady 1 po polsku"
+          }
+        ]
+      }
+    }
+  }
+  

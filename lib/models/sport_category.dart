@@ -1,7 +1,6 @@
 class SportCategory {
-  final String idName;
   final String name;
-  final String image;
+  final String imagePath;
 
-  SportCategory({required this.idName, required this.name, required this.image});
+  SportCategory({required this.name, required this.imagePath});
 }
