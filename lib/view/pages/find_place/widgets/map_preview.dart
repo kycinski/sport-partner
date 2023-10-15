@@ -57,7 +57,7 @@ class _MapPreviewState extends State<MapPreview> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: FlutterMap(
-          options: MapOptions(center: widget.initialCoordinates, zoom: 11),
+          options: MapOptions(center: widget.initialCoordinates, zoom: 11, maxZoom: 19),
           mapController: _mapController,
           nonRotatedChildren: [
             MapAttribution(
