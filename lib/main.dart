@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ChatsController()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Sport Partner',
         theme: AppTheme.defaultTheme,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
