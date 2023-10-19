@@ -15,14 +15,11 @@ class SingleRuleSection extends StatelessWidget {
         children: [
           Text(
             ruleTitle,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-            ),
+            style: const TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
             ruleDescription,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 16,
             ),

@@ -1,42 +1,260 @@
 {
     "tennis": {
-      "imagePath": "tennis_image.jpg",
+      "imagePath": "assets/images/tennis.jpeg",
+      "rulesImagePath": "assets/images/tennis_rules.png",
       "rules": {
         "en": [
           {
-            "ruleTitle": "Rule 1",
-            "ruleDescription": "Description of rule 1 in English"
+            "ruleTitle": "Scoring",
+            "ruleDescription": "In tennis, points are scored as follows:\n0 points - \"0\" or \"love\"\n15 points - \"15\"\n30 points - \"30\"\n40 points - \"40\""
           },
           {
-            "ruleTitle": "Rule 2",
-            "ruleDescription": "Description of rule 2 in English"
+            "ruleTitle": "Deuce (equal state)",
+            "ruleDescription": "When both players score 40 points (equal), it is called \"deuce\". Then it is necessary to score two points in a row to win the game."
+          },
+          {
+            "ruleTitle": "Advantage",
+            "ruleDescription": "If a player scores a point after a deuce, he or she receives an \"advantage\". If the opponent equalizes, the game returns to deuce state. The advantage must be gained by winning another point."
+          },
+          {
+            "ruleTitle": "Game",
+            "ruleDescription": "To win a game, a player must gain an advantage and win another point. This gives him a gem in his account."
+          },
+          {
+            "ruleTitle": "Set",
+            "ruleDescription": "To win a set, you usually need to win six games, with a two-game advantage over your opponent (e.g. 6-4, 6-3). If the score is 6-6, a tie-break is played to determine the winner of the set."
+          },
+          {
+            "ruleTitle": "Match",
+            "ruleDescription": "If a player wins two sets in a three-set match, or three sets in a five-set match, he or she wins the match."
+          },
+          {
+            "ruleTitle": "Service",
+            "ruleDescription": "The server starts the game from 0-0 and performs the first serve. The server has two attempts to hit the designated area on the opposite side of the court. If the first serve is \"out\" (outside the service court), the server has a second try. Otherwise, a point is awarded for a successful serve.\nIf the server makes two double faults (i.e. two outs in a row), the opponent scores a point."
+          },
+          {
+            "ruleTitle": "Playing a point",
+            "ruleDescription": "After a successful serve, play continues and the players exchange hits with the ball, trying to score a point by placing it in the opponent's box until the opponent is unable to return it."
+          },
+          {
+            "ruleTitle": "Tie-break",
+            "ruleDescription": "A tie-break is played to decide the set when the score is 6-6. In a tie-break, points are counted from \"1\" to \"7\", and the players serve alternately every two balls. The player who scores at least seven points and is at least two points ahead wins the tie-break and the set."
+          },
+          {
+            "ruleTitle": "Ball touching the line",
+            "ruleDescription": "A ball touching a line is considered to have hit the court bounded by that line."
           }
         ],
         "pl": [
           {
-            "ruleTitle": "Zasada 1",
-            "ruleDescription": "Opis zasady 1 po polsku"
+            "ruleTitle": "Punktacja",
+            "ruleDescription": "W tenisie punkty zdobywa się w następujący sposób:\n0 punktów - \"0\" lub \"love\"\n15 punktów - \"15\"\n30 punktów - \"30\"\n40 punktów - \"40\""
           },
           {
-            "ruleTitle": "Zasada 2",
-            "ruleDescription": "Opis zasady 2 po polsku"
+            "ruleTitle": "Deuce (stan równy)",
+            "ruleDescription": "Kiedy oboje zawodnicy zdobędą 40 punktów (stan równy), mówi się \"deuce\". Wtedy konieczne jest zdobycie dwóch punktów z rzędu, aby wygrać gem."
+          },
+          {
+            "ruleTitle": "Advantage (przewaga)",
+            "ruleDescription": "Jeśli zawodnik zdobędzie punkt po deuce, otrzymuje \"przewagę\" (advantage). Jeśli przeciwnik wyrówna, gra wraca do stanu deuce. Przewagę trzeba zdobyć, wygrywając kolejny punkt."
+          },
+          {
+            "ruleTitle": "Gem",
+            "ruleDescription": "Aby wygrać gem, zawodnik musi zdobyć przewagę i wygrać kolejny punkt. Daje mu to gem w swoim koncie."
+          },
+          {
+            "ruleTitle": "Set",
+            "ruleDescription": "Aby wygrać seta, zazwyczaj trzeba zdobyć sześć gemów, z przewagą dwóch gemów nad przeciwnikiem (np. 6-4, 6-3). W przypadku osiągnięcia stanu 6-6, rozgrywany jest tie-break, aby określić zwycięzcę seta."
+          },
+          {
+            "ruleTitle": "Mecz",
+            "ruleDescription": "W zwykłych warunkach, jeśli zawodnik wygra dwa sety w trzysetowym meczu, lub trzy sety w pięciosetowym meczu, to wygrywa mecz."
+          },
+          {
+            "ruleTitle": "Serwis",
+            "ruleDescription": "Serwujący zaczyna grę od stanu 0-0 i wykonuje pierwszy serwis. Serwujący ma dwie próby, aby trafić w wyznaczony obszar na przeciwległej stronie kortu. Jeśli pierwszy serwis jest \"out\" (poza polem serwisowym), serwujący ma drugą próbę. W przeciwnym razie punkt jest przyznawany za udany serwis.\nJeśli serwujący popełni dwa podwójne błędy serwisowe (czyli dwa \"out\" serwisy z rzędu), przeciwnik zdobywa punkt."
+          },
+          {
+            "ruleTitle": "Rozegranie punktu",
+            "ruleDescription": "Po udanym serwisie gra toczy się, a zawodnicy wymieniają uderzenia piłką, próbując zdobyć punkt poprzez umieszczenie jej w polu przeciwnika tak, że przeciwnik nie jest w stanie jej zwrócić."
+          },
+          {
+            "ruleTitle": "Tie-break",
+            "ruleDescription": "Tie-break jest rozgrywany w celu rozstrzygnięcia seta, gdy wynik wynosi 6-6. W tie-breaku punkty są liczone od \"1\" do \"7\", a zawodnicy serwują na przemian co dwie piłki. Zawodnik, który zdobędzie przynajmniej siedem punktów i ma przynajmniej dwa punkty przewagi, wygrywa tie-break i seta."
+          },
+          {
+            "ruleTitle": "Piłka dotykająca linii",
+            "ruleDescription": "Piłka dotykająca linii jest uważana za trafiającą w kort ograniczony tą linią."
           }
         ]
       }
     },
     "squash": {
-      "imagePath": "squash_image.jpg",
+      "imagePath": "assets/images/squash.jpeg",
+      "rulesImagePath": "assets/images/squash_rules.webp",
       "rules": {
         "en": [
           {
-            "ruleTitle": "Rule 1",
-            "ruleDescription": "Description of rule 1 in English"
+            "ruleTitle": "Scoring",
+            "ruleDescription": "A squash match lasts until three sets are won. Each set lasts up to eleven points, except when both players have scored ten points. In this case, the winner is the one who gains 2 points advantage."
+          },
+          {
+            "ruleTitle": "How to serve",
+            "ruleDescription": "- Stand with one foot in either service box\n- Hit the ball to the front wall landing it above the service line, below the out line\n- The ball then must travel from the front wall to the opposite back corner (behind the short line and on the other side of the half court line from where it was served)\n- The ball can rebound off other walls or be hit on the full (a volley)"
+          },
+          {
+            "ruleTitle": "During the rally",
+            "ruleDescription": "- The ball MUST hit the front wall each shot but can hit other walls before or after\n- The opponent must hit the ball before the 2nd bounce\n- Players can hit the ball before it bounces on the floor (a volley)\n- Players can use all of the court after the serve is hit, there are no restrictions on where to run"
+          },
+          {
+            "ruleTitle": "When is a ball out?",
+            "ruleDescription": "- When it hits the tin or out line\n- When it hits above the out of court line (on a serve or during a rally)\n- When it bounces on the floor more than once before being hit\n- When a serve lands in the incorrect area (a fault)"
           }
         ],
         "pl": [
           {
-            "ruleTitle": "Zasada 1",
-            "ruleDescription": "Opis zasady 1 po polsku"
+            "ruleTitle": "Liczenie punktów",
+            "ruleDescription": "Mecz squasha trwa do trzech wygranych setów. Każdy set trwa do jedenastu punktów za wyjątkiem sytuacji gdzie obaj zawodnicy zdobyli po dziesięć punktów. W tym wypadku wygrywa ten, który zdobywa 2 punkty przewagi."
+          },
+          {
+            "ruleTitle": "Serwis",
+            "ruleDescription": "Mecz squasha rozpoczyna się serwisem, a serwującego po raz pierwszy losuje się poprzez pokręcenie rakiety na podłodze kortu. Serwujący, jeśli wykonuje prawidłowo serwis, serwuje na przemian z lewej i prawej strony tak długo dopóki nie przegra wymiany po serwisie. Wygrywający bieżącego seta serwuje po raz pierwszy w następnym. Przed rozpoczęciem każdego seta, oraz po każdym wygraniu serwisu serwujący ma prawo wybrać stronę z której chce serwować po raz pierwszy. Serwujący musi znajdować się przynajmniej częścią jednej stopy w kwadracie serwisowym nie dotykając ową stopą żadnej z linii ograniczających kwadrat. Serwis będzie prawidłowy jeśli uderzona piłka trafi bezpośrednio w ścianę frontową kortu powyżej linii serwisowej a poniżej linii autowej i odbije się od podłogi w polu serwisowym przeciwnika, lub przed odbiciem zostanie przez niego odegrana volleyem."
+          },
+          {
+            "ruleTitle": "Odegranie",
+            "ruleDescription": "Piłkę zagraną przez przeciwnika można odegrać dopiero gdy odbije się ona od ściany frontowej kortu. Odegrana piłka będzie prawidłowa, kiedy najpóźniej przed drugim odbiciem od podłogi kortu zostanie prawidłowo uderzona w ścianę frontową powyżej dolnej linii (TIN) i poniżej górnej linii autowej nie uderzając wcześniej w podłogę. Piłka może przy tym odbić się od ścian bocznych i tylnej w dowolnej konfiguracji przed, lub po odbiciu od podłogi kortu, zanim trafi w ścianę frontową. Odegrana piłka nie będzie prawidłowa, kiedy jest \"podwójna\", gdy trafi za nisko w ścianę frontową lub wcześniej w podłogę, albo jeśli jest autowa."
+          },
+          {
+            "ruleTitle": "Wymiana",
+            "ruleDescription": "Po wykonaniu prawidłowego serwisu rozpoczyna się naprzemienna wymiana uderzeń obu zawodników do póki jeden z nich nie wykona nieprawidłowego uderzenia. Każda wymiana składa się z serwisu i szeregu prawidłowych uderzeń po nim następujących. Zawodnik wygrywa wymianę, jeśli jego przeciwnikowi nie uda się wykonać prawidłowo serwisu lub uderzenia, albo gdy piłka trafi w przeciwnika zanim zawodnik zdąży ją uderzyć."
+          },
+          {
+            "ruleTitle": "Trafienie przeciwnika piłką",
+            "ruleDescription": "Gra zostaje przerwana jeśli zawodnik trafi piłką przeciwnika, jego rakietę, lub części ubrania. Jeśli uderzenie byłoby prawidłowe i piłka trafiłaby bezpośrednio w ścianę frontową, zawodnik uderzający wygrywa wymianę pod warunkiem, że przed uderzeniem nie wykonał obrotu. Jeśli piłka uderzyła, lub uderzyłaby w ścianę boczną ale dotarłaby do ściany frontowej i uderzenie byłoby prawidłowe, należy zagrać LET. Jeśli uderzenie byłoby nieprawidłowe, uderzający przegrywa wymianę."
+          },
+          {
+            "ruleTitle": "Obrót",
+            "ruleDescription": "Jeśli zawodnik obróci się za piłką dookoła swojej osi przed uderzeniem, lub pozwoli piłce na okrążenie siebie i ustawi się do uderzenia, znaczy to że wykonał \"obrót\". Jeśli zawodnik po wykonaniu obrotu trafi przeciwnika piłką, przegrywa wymianę. Jeśli zawodnik w czasie obrotu przerwie wymianę z obawy przed trafieniem przeciwnika, należy zagrać LET."
+          },
+          {
+            "ruleTitle": "Przeszkadzanie",
+            "ruleDescription": "Zawodnik na którego uderzenie przyszła kolej, ma prawo do wystarczającej ilości miejsca na wykonanie uderzenia bez przeszkadzania mu przy tym przez przeciwnika. Aby uniknąć przeszkadzania, przeciwnik musi próbować umożliwić zawodnikowi dojście do piłki, jej obserwację i zapewnić miejsce na wykonanie prawidłowego uderzenia w każdą część ściany frontowej. Zawodnik któremu przeciwnik przeszkadza może mimo to grać dalej, lub przerwać wymianę. Jeśli z powodu przeszkadzania przerwana zostanie gra, obowiązują następujące zasady: \n1. Zawodnikowi przysługuje prawo do LET'a, jeśli mógłby wykonać prawidłowe uderzenie, a przeciwnik zrobił wszystko by uniknąć przeszkadzania.\n2. Zawodnik nie ma prawa do LET'a (przegrywa wymianę) jeśli nie mógłby wykonać prawidłowego uderzenia, lub mimo przeszkadzania zdecydował się na wykonanie uderzenia, albo gdy przeszkadzanie było tak niewielkie, że nie wpłynęłoby na dojście do piłki i jakość uderzenia.\n3. Zawodnik ma prawo do punktu (wygrywa wymianę), jeśli przeciwnik nie podjął wszelkich prób w celu uniknięcia przeszkadzania, lub gdy zawodnik mógłby wykonać wygrywające wymianę uderzenie, albo gdy zawodnik trafił piłką przeciwnika stojącego na bezpośredniej drodze do ściany frontowej."
+          },
+          {
+            "ruleTitle": "Przyznanie piłki LET'owej",
+            "ruleDescription": "Piłka LET'owa jest piłką nierozstrzygniętą. Wymiana się nie liczy, a zawodnik serwujący serwuje ponownie z tej samej strony. Poza wyżej wymienionymi sytuacjami, LET można przyznać również wtedy gdy piłka w czasie wymiany uderzy w jakikolwiek przedmiot leżący na podłodze kortu, lub gdy zawodnik powstrzyma się od uderzenia w obawie o spowodowanie kontuzji u przeciwnika. LET musi być przyznany jeśli zawodnik nie był gotowy do odbioru serwisu i nie podjął próby odbioru i gdy w czasie gry piłka zostanie uszkodzona."
+          }
+        ]
+      }
+    },
+    "table_tennis": {
+      "imagePath": "assets/images/table_tennis.jpeg",
+      "rulesImagePath": "assets/images/table_tennis_rules.jpg",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Scoring",
+            "ruleDescription": "A table tennis match lasts until three sets are won. Each set lasts up to eleven points, except when both players have scored ten points. In this case, the winner is the one who gains 2 points advantage."
+          },
+          {
+            "ruleTitle": "How to serve",
+            "ruleDescription": "- After hitting the ball, it must bounce once on the server's side and once on the receiver's side.\n- If during the serve the ball touches the table net along the way, we have the so-called net. Then we don't lose a point. Just serve again. This may happen several times in a row. This has no impact on the score.\n- Serving into the net or off the table means losing a point."
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Liczenie punktów",
+            "ruleDescription": "Mecz tenisa stołowego trwa do trzech wygranych setów. Każdy set trwa do jedenastu punktów za wyjątkiem sytuacji gdzie obaj zawodnicy zdobyli po dziesięć punktów. W tym wypadku wygrywa ten, który zdobywa 2 punkty przewagi."
+          },
+          {
+            "ruleTitle": "Serwis",
+            "ruleDescription": "- Po uderzeniu piłeczka musi odbić się raz na stronie podającego i raz na stronie odbierającego.\n- Jeżeli przy serwisie piłka po drodze dotknie siatki stołu, mamy tzw. net. Nie tracimy wtedy punktu. Należy tylko ponownie zaserwować. Może tak się zdarzyć kilka razy pod rząd. Nie ma to żadnego przełożenia na punktację.\n- Serwis w siatkę albo poza stół oznacza stratę punktu."
+          }
+        ]
+      }
+    },
+    "badminton": {
+      "imagePath": "assets/images/badminton.jpeg",
+      "rulesImagePath": "assets/images/badminton_rules.jpg",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Scoring",
+            "ruleDescription": "Each match consists of sets. The set ends when one player or team scores 21 points. The entire match ends after 2 winning sets by one side of the game.\nIf the set score is a 20-20 draw, the first team or player to gain a 2-point lead wins. In case of a draw 29:29, the side that first scores the 30th point wins.\nPoints are scored when the opponent misses the shuttle, hits it out of bounds or hits it off the net."
+          },
+          {
+            "ruleTitle": "How to serve",
+            "ruleDescription": "The serve is performed from a special service court, and the server and receiver must stand diagonally. When the server has zero points or the number of points is even, he stands on the right side of the court, if it is odd, he serves on the left side of the court."
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Liczenie punktów",
+            "ruleDescription": "Każdy mecz składa się z setów. Set kończy się, gdy jeden z zawodników lub jedna z drużyn zdobędzie 21 punktów. Cały mecz zostaje zakończony po 2 zwycięskich setach jednej ze stron rozgrywki.\nGdy setowym wynikiem jest remis 20:20, wygrywa drużyna lub zawodnik, który pierwszy zdobędzie 2 punkty przewagi. Z kolei przy remisie 29:29, wygrywa strona, która jako pierwsza zdobędzie 30. punkt.\nPunkty naliczane są w momencie, gdy przeciwnik nie trafi w lotkę, wybije ją poza obręb boiska lub odbije ją od siatki."
+          },
+          {
+            "ruleTitle": "Serwis",
+            "ruleDescription": "Serwis wykonuje się ze specjalnego pola serwisowego, a serwujący oraz osoba odbierająca muszą stać po przekątnej. W momencie, gdy serwujący ma zero punktów lub liczba punktów jest parzysta, ustawia się po prawej stronie boiska, jeśli nieparzysta – serwuje z lewej strony kortu."
+          }
+        ]
+      }
+    },
+    "dart": {
+      "imagePath": "assets/images/dart.jpeg",
+      "rulesImagePath": "assets/images/dart_rules.webp",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Scoring",
+            "ruleDescription": "Each player starts with a score of 501 points and takes turns throwing 3 darts. The person who throws one dart as close to the bull's eye as possible, i.e. the very center of the dartboard, starts the game. The score for each turn is calculated and subtracted from the players' score. The aim of the game is to be the first player to go to \"zero\". Depending on the previously agreed length of the game, the player who wins a certain number of sets wins\n\n- Hitting the bullseye, i.e. the very center of the target, gives the thrower 50 points.\n- Hitting the bullseye (green ring in the central part of the target) 25 points.\n- A dart in a double (larger) ring doubles the number of points thrown.\n- A dart in a triple (smaller) ring triples the value of the segment.\n- Hits in a regular square are counted one at a time."
+          },
+          {
+            "ruleTitle": "Distance and height",
+            "ruleDescription": "The minimum distance of the thrower from the target should be 2.37 m. The dart board should be suspended at such a height that the center of the bull's eye is 1.73 m above the floor."
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Liczenie punktów",
+            "ruleDescription": "Każdy gracz zaczyna z wynikiem 501 punktów i na zmianę rzuca 3 rzutkami. Zaczyna osoba, która wyrzuci jedną lotką jak najbliżej pola bull’s eye, czyli samego środka tarczy. Wynik za każdą turę jest obliczany i odejmowany od wyniku graczy. Celem rozgrywki jest bycie pierwszym graczem, który zejdzie do \"zera\". W zależności od wcześniej umówionej długości rozgrywki, zwycięża gracz, który wygra określoną ilość setów\n\n- Trafienie w bullseye, czyli sam środek tarczy daje rzucającemu 50 punktów.\n- Trafienie w bulla (zielony pierscień w centralnej części tarczy) 25 punktów.\n- Rzutka w podwójnym (większym) pierścieniu, podwaja ilość wyrzuconych punktów.\n- Rzutka w potrójnym (mniejszym) pierścieniu, potraja wartość segmentu.\n- Trafienie w zwykłe pole liczone jest pojedynczo."
+          },
+          {
+            "ruleTitle": "Odległość i wysokość",
+            "ruleDescription": "Minimalna odległość rzucającego od tarczy powinna wynosić 2,37m. Tarcza dart powinna być zawieszona na takiej wysokości, aby środek pola bull’s eye znajdował się 1.73m nad podłogą."
+          }
+        ]
+      }
+    },
+    "billiard": {
+      "imagePath": "assets/images/billiard.jpeg",
+      "rulesImagePath": "assets/images/billiard_rules.jpg",
+      "rules": {
+        "en": [
+          {
+            "ruleTitle": "Setting up balls",
+            "ruleDescription": "The cue ball should be placed on one side of the table. On the other side, use the triangle to place the remaining 15 balls.\nThe triangle should face its apex towards the opposite part of the table. The balls should be placed alternately (halves between whole balls). The black ball should be in the center of the triangle. After preparing the balls, you can take the cues in your hands and start playing."
+          },
+          {
+            "ruleTitle": "Game goal",
+            "ruleDescription": "The aim of the game is for a player to pot all the colored balls (whole or halves) and then pot the black ball. Which type of colored balls a player should pot depends on the first hit on the cue ball. The first ball that a player pockets is credited to him. If he potted a half (ball with a stripe), he must pocket all the halves. Then the second player has to pocket all the balls (without the stripe)."
+          },
+          {
+            "ruleTitle": "Fouls in billiards",
+            "ruleDescription": "- touching any ball with the hand, other part of the body or clothing\n- hitting the cue ball with a part of the cue other than the tip of the cue\n- hitting the cue ball while the other balls are still in motion\n- no contact of the cue ball with the declared ball after hitting\n- no contact of the colored ball with the board after hitting\n- hitting the ball off the table\n- pocketing the white ball\n- hitting the opponent's ball or the black ball before hitting the declared ball.\n\nAfter a foul, the opponent may play from the so-called \"white in hand\". This means he can place the cue ball anywhere on the table."
+          }
+        ],
+        "pl": [
+          {
+            "ruleTitle": "Rozstawienie bil",
+            "ruleDescription": "Bilardowa ósemka jest skierowana dla dwóch graczy. Bilę rozgrywającą (białą) należy umieścić na jednej stronie stołu. Po drugiej stronie, przy pomocy trójkąta, należy umieścić pozostałe 15 bil.\nTrójkąt powinien być zwrócony wierzchołkiem ku przeciwległej części stołu. Bile należy układać naprzemiennie (połówki między całe bile). Czarna bila powinna znaleźć się na środku trójkąta. Po przygotowaniu bil, można chwycić kije w dłonie i rozpocząć rozgrywkę."
+          },
+          {
+            "ruleTitle": "Cel gry",
+            "ruleDescription": "Cel gry to wbicie wszystkich kolorowych bil (całych lub połówek) przez zawodnika, a następnie wbicie czarnej bili. To, który rodzaj kolorowych bil ma za zadanie wbijać zawodnik, zależy od pierwszego uderzenia w białą bilę. Pierwsza bila, jaką wbił gracz do łuzy, zostaje mu przypisana. Jeśli wbił połówkę (bilę z paskiem), musi wbić wszystkie połówki. Wówczas drugi gracz ma wbić całe bile (bez paska)."
+          },
+          {
+            "ruleTitle": "Faule w bilardzie",
+            "ruleDescription": "- dotknięcie jakiejkolwiek bili ręką, inną częścią ciała czy ubraniem\n- uderzenie białej bili inną częścią kija niż jego czubek\n- uderzenie białej bili, gdy inne bile są jeszcze w ruchu\n- brak kontaktu białej bili po uderzeniu z bilą deklarowaną\n- brak kontaktu kolorowej bili z bandą po uderzeniu\n- wybicie bili poza stół\n- wbicie białej bili do łuzy\n- uderzenie w bilę przeciwnika lub czarną bilę przed uderzeniem w bilę deklarowaną.\n\nPo faulu, przeciwnik może grać z pozycji tzw. \"biała w ręce\". Oznacza to, że może postawić białą bilę w dowolnym miejscu na stole."
           }
         ]
       }

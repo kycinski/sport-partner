@@ -47,7 +47,7 @@ class CategoryDetailPage extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => GameRulesPage(
-                          categoryIdName: choosenCategory.name,
+                          choosenCategory: choosenCategory,
                         ),
                       ),
                     );

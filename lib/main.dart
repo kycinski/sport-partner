@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_partner/controllers/chats_controller.dart';
+import 'package:sport_partner/controllers/sport_categories_provider.dart';
 import 'package:sport_partner/controllers/user_controller.dart';
+import 'package:sport_partner/services/sport_categories_service.dart';
 import 'package:sport_partner/themes/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sport_partner/view/pages/splash_screen.dart';
@@ -15,25 +17,34 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  final sportCategoriesJsonData = await SportCategoriesService().fetchSportCategories();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('pl', 'PL')],
       path: 'assets/translations',
       fallbackLocale: const Locale('en', 'US'),
-      child: const MyApp(),
+      child: MyApp(sportCategoriesJsonData),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp(this.sportCategoriesJsonData, {super.key});
+
+  final Map<String, dynamic> sportCategoriesJsonData;
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserController()),
+        ChangeNotifierProvider(
+          create: (_) => SportCategoriesProvider(
+            sportCategoriesJsonData,
+            context.locale.languageCode,
+          ),
+        ),
         ChangeNotifierProvider(create: (_) => ChatsController()),
       ],
       child: MaterialApp(
