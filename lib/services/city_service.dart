@@ -12,4 +12,9 @@ class CityService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(_selectedCityKey);
   }
+
+  Future<bool> checkIfCityIsSelected() async {
+    final selectedCity = await CityService().getSelectedCity();
+    return selectedCity != null && selectedCity.isNotEmpty;
+  }
 }
