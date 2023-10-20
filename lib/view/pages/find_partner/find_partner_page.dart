@@ -18,27 +18,39 @@ class FindPartnerPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => FindPartnerController(categoryIdName),
       builder: (context, child) {
-        context.read<FindPartnerController>().fetchPosts();
         return Scaffold(
           appBar: AppBar(
             title: Text('mainOptions.findPartner'.tr()),
             flexibleSpace: AppTheme.defaultAppBarTheme,
           ),
           body: CustomGradientBackground(
-            child: Consumer<FindPartnerController>(builder: (context, findPartnerController, _) {
-              return ListView.separated(
-                itemCount: findPartnerController.posts.length,
-                padding: const EdgeInsets.all(20),
-                itemBuilder: (context, index) {
-                  return PostCard(
-                    post: findPartnerController.posts[index],
+            child: FutureBuilder(
+              future: context.read<FindPartnerController>().fetchPosts(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
                   );
-                },
-                separatorBuilder: (context, index) {
-                  return const SizedBox(height: 20);
-                },
-              );
-            }),
+                } else {
+                  return Consumer<FindPartnerController>(
+                    builder: (context, findPartnerController, _) {
+                      return ListView.separated(
+                        itemCount: findPartnerController.posts.length,
+                        padding: const EdgeInsets.all(20),
+                        itemBuilder: (context, index) {
+                          return PostCard(
+                            post: findPartnerController.posts[index],
+                          );
+                        },
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(height: 20);
+                        },
+                      );
+                    },
+                  );
+                }
+              },
+            ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
