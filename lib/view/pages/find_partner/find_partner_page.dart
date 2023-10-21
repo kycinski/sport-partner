@@ -34,18 +34,31 @@ class FindPartnerPage extends StatelessWidget {
                 } else {
                   return Consumer<FindPartnerController>(
                     builder: (context, findPartnerController, _) {
-                      return ListView.separated(
-                        itemCount: findPartnerController.posts.length,
-                        padding: const EdgeInsets.all(20),
-                        itemBuilder: (context, index) {
-                          return PostCard(
-                            post: findPartnerController.posts[index],
-                          );
-                        },
-                        separatorBuilder: (context, index) {
-                          return const SizedBox(height: 20);
-                        },
-                      );
+                      if (findPartnerController.posts.isNotEmpty) {
+                        return ListView.separated(
+                          itemCount: findPartnerController.posts.length,
+                          padding: const EdgeInsets.all(20),
+                          itemBuilder: (context, index) {
+                            return PostCard(
+                              post: findPartnerController.posts[index],
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return const SizedBox(height: 20);
+                          },
+                        );
+                      } else {
+                        return Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              'findPartnerEmptyList'.tr(),
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                          ),
+                        );
+                      }
                     },
                   );
                 }
