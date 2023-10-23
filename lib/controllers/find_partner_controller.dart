@@ -7,8 +7,11 @@ import 'package:sport_partner/services/city_service.dart';
 import 'package:sport_partner/services/post_service.dart';
 
 class FindPartnerController with ChangeNotifier {
-  List<Post> _posts = [];
+  final List<Post> _posts = [];
   String? _categoryIdName;
+  final int _fetchLimit = 4;
+  bool _hasNext = true;
+  bool _isFetchingPosts = false;
 
   List<Post> get posts => _posts;
 
@@ -17,8 +20,18 @@ class FindPartnerController with ChangeNotifier {
   }
 
   Future<void> fetchPosts() async {
+    if (_isFetchingPosts || !_hasNext) return;
+    _isFetchingPosts = true;
     final city = await CityService().getSelectedCity();
-    _posts = await PostService().fetchPostsFromFirestore(city: city!, category: _categoryIdName!);
+    final fetchedPosts = await PostService().fetchPostsFromFirestore(
+      city: city!,
+      category: _categoryIdName!,
+      limit: _fetchLimit,
+      startAfterPost: _posts.isNotEmpty ? _posts.last : null,
+    );
+    if (fetchedPosts.length < _fetchLimit) _hasNext = false;
+    _posts.addAll(fetchedPosts);
+    _isFetchingPosts = false;
     notifyListeners();
   }
 

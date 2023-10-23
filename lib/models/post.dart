@@ -12,6 +12,7 @@ class Post {
   String? profileImageUrl;
   String desiredGender;
   RangeValues desiredAgeRange;
+  DateTime createdAt;
 
   Post({
     required this.uid,
@@ -23,6 +24,7 @@ class Post {
     this.profileImageUrl,
     required this.desiredGender,
     required this.desiredAgeRange,
+    required this.createdAt,
   });
 
   factory Post.fromJson(dynamic data, dynamic userData) {
@@ -36,6 +38,7 @@ class Post {
       profileImageUrl: userData['profileImageUrl'],
       desiredGender: data['desiredGender'],
       desiredAgeRange: RangeValues(data['desiredAgeRange'][0].toDouble(), data['desiredAgeRange'][1].toDouble()),
+      createdAt: DateTime.parse(data['createdAt'].toDate().toString()),
     );
   }
 }

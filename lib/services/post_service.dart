@@ -3,15 +3,22 @@ import 'package:sport_partner/models/post.dart';
 import 'package:sport_partner/models/post_creation.dart';
 
 class PostService {
-  Future<List<Post>> fetchPostsFromFirestore({required String city, required String category}) async {
+  Future<List<Post>> fetchPostsFromFirestore(
+      {required String city, required String category, required int limit, Post? startAfterPost}) async {
     try {
-      QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+      late QuerySnapshot querySnapshot;
+      final ref = FirebaseFirestore.instance
           .collection('cities')
           .doc(city)
           .collection('posts')
           .where('category', isEqualTo: category)
           .orderBy('createdAt', descending: true)
-          .get();
+          .limit(limit);
+      if (startAfterPost == null) {
+        querySnapshot = await ref.get();
+      } else {
+        querySnapshot = await ref.startAfter([Timestamp.fromDate(startAfterPost.createdAt)]).get();
+      }
       List<Post> posts = [];
       for (final doc in querySnapshot.docs) {
         final userData = await doc['userRef'].get();

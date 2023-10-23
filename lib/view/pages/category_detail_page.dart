@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sport_partner/controllers/find_partner_controller.dart';
 import 'package:sport_partner/models/sport_category.dart';
 import 'package:sport_partner/themes/app_theme.dart';
 import 'package:sport_partner/view/pages/find_partner/find_partner_page.dart';
@@ -32,9 +34,13 @@ class CategoryDetailPage extends StatelessWidget {
                   onClick: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => FindPartnerPage(
-                          categoryIdName: choosenCategory.name,
-                        ),
+                        builder: (context) => ChangeNotifierProvider(
+                            create: (context) => FindPartnerController(choosenCategory.name),
+                            builder: (context, _) {
+                              return FindPartnerPage(
+                                categoryIdName: choosenCategory.name,
+                              );
+                            }),
                       ),
                     );
                   },
