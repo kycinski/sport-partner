@@ -8,8 +8,8 @@ import 'package:sport_partner/view/pages/login_or_register/widgets/social_login_
 import 'package:sport_partner/view/pages/login_or_register/widgets/switch_mode_section.dart';
 import 'package:sport_partner/view/widgets/custom_page_background.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginOrRegisterPage extends StatelessWidget {
+  const LoginOrRegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {

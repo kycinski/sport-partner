@@ -131,7 +131,7 @@ class AppDrawer extends StatelessWidget {
             title: Text('buttons.login'.tr()),
             leading: const Icon(Icons.login),
             onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginOrRegisterPage()));
             },
           ),
         )
