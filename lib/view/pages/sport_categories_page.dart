@@ -29,10 +29,8 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
     authStreamSubscription = FirebaseAuth.instance.authStateChanges().listen((event) async {
       if (event != null) {
         await userController.setUserData(userId: event.uid);
-        print('zalogowano');
       } else {
         userController.resetState();
-        print('wylogowano');
       }
     });
   }
@@ -45,7 +43,6 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final categories = SportCategoriesData.categories;
     final categories = context.read<SportCategoriesProvider>().categories;
     return Scaffold(
       drawer: const AppDrawer(),
@@ -53,30 +50,28 @@ class _SportCategoriesPageState extends State<SportCategoriesPage> {
         title: Text('categories.categories'.tr()),
         flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
-      body: SafeArea(
-        child: CustomGradientBackground(
-          child: GridView.builder(
-            padding: const EdgeInsets.all(20),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 30,
-              crossAxisSpacing: 20,
-            ),
-            itemCount: categories.length,
-            itemBuilder: (context, index) {
-              return MainImageButton(
-                text: 'categories.${categories[index].name}'.tr(),
-                imagePath: categories[index].imagePath,
-                onClick: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CategoryDetailPage(
-                      choosenCategory: categories[index],
-                    ),
+      body: CustomGradientBackground(
+        child: GridView.builder(
+          padding: const EdgeInsets.all(20),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 30,
+            crossAxisSpacing: 20,
+          ),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            return MainImageButton(
+              text: 'categories.${categories[index].name}'.tr(),
+              imagePath: categories[index].imagePath,
+              onClick: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CategoryDetailPage(
+                    choosenCategory: categories[index],
                   ),
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );

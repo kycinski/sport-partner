@@ -54,6 +54,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Sport Partner',
         theme: AppTheme.defaultTheme,
+        debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,

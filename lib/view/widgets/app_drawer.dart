@@ -14,14 +14,14 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: SafeArea(
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/gradient.jpeg'),
-              fit: BoxFit.cover,
-            ),
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/gradient.jpeg'),
+            fit: BoxFit.cover,
           ),
+        ),
+        child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(children: [

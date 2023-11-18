@@ -22,59 +22,57 @@ class CategoryDetailPage extends StatelessWidget {
         title: Text('categories.${choosenCategory.name}'.tr()),
         flexibleSpace: AppTheme.defaultAppBarTheme,
       ),
-      body: SafeArea(
-        child: CustomGradientBackground(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                MainImageButton(
-                  text: 'mainOptions.findPartner'.tr().toUpperCase(),
-                  imagePath: 'assets/images/find_partner.jpeg',
-                  onClick: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ChangeNotifierProvider(
-                            create: (context) => FindPartnerController(choosenCategory.name),
-                            builder: (context, _) {
-                              return FindPartnerPage(
-                                categoryIdName: choosenCategory.name,
-                              );
-                            }),
+      body: CustomGradientBackground(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              MainImageButton(
+                text: 'mainOptions.findPartner'.tr().toUpperCase(),
+                imagePath: 'assets/images/find_partner.jpeg',
+                onClick: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ChangeNotifierProvider(
+                          create: (context) => FindPartnerController(choosenCategory.name),
+                          builder: (context, _) {
+                            return FindPartnerPage(
+                              categoryIdName: choosenCategory.name,
+                            );
+                          }),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              MainImageButton(
+                text: 'mainOptions.gameRules'.tr().toUpperCase(),
+                imagePath: 'assets/images/rules.jpeg',
+                onClick: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => GameRulesPage(
+                        choosenCategory: choosenCategory,
                       ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 20),
-                MainImageButton(
-                  text: 'mainOptions.gameRules'.tr().toUpperCase(),
-                  imagePath: 'assets/images/rules.jpeg',
-                  onClick: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => GameRulesPage(
-                          choosenCategory: choosenCategory,
-                        ),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              MainImageButton(
+                text: 'mainOptions.findPlace'.tr().toUpperCase(),
+                imagePath: 'assets/images/find_place.jpeg',
+                onClick: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => FindPlacePage(
+                        categoryIdName: choosenCategory.name,
                       ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 20),
-                MainImageButton(
-                  text: 'mainOptions.findPlace'.tr().toUpperCase(),
-                  imagePath: 'assets/images/find_place.jpeg',
-                  onClick: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => FindPlacePage(
-                          categoryIdName: choosenCategory.name,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
