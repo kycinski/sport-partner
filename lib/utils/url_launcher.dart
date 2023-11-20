@@ -12,4 +12,17 @@ class UrlLauncher {
       throw 'Could not launch $uri';
     }
   }
+
+  static Future<void> sendEmail(String emailAddress, String subject) async {
+    final Uri uri = Uri(
+      scheme: 'mailto',
+      path: emailAddress,
+      query: 'subject=$subject',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $uri';
+    }
+  }
 }

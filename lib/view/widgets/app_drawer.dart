@@ -7,6 +7,7 @@ import 'package:sport_partner/view/pages/edit_profile/edit_profile_page.dart';
 import 'package:sport_partner/view/pages/login_or_register/login_or_register_page.dart';
 import 'package:sport_partner/view/pages/select_city_page.dart';
 import 'package:sport_partner/view/widgets/profile_image.dart';
+import 'package:sport_partner/utils/url_launcher.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -24,26 +25,42 @@ class AppDrawer extends StatelessWidget {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(children: [
-              Consumer<UserController>(
-                builder: (context, userController, child) {
-                  return userController.userLoggedIn
-                      ? _buildAppDrawerForLoggedUser(userController, context)
-                      : _buildAppDrawerForNotLoggedUser(context);
-                },
-              ),
-              const Spacer(),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const SelectCityPage(),
-                    ),
-                  );
-                },
-                child: Text('buttons.changeCity'.tr()),
-              ),
-            ]),
+            child: Column(
+              children: [
+                Consumer<UserController>(
+                  builder: (context, userController, child) {
+                    return userController.userLoggedIn
+                        ? _buildAppDrawerForLoggedUser(userController, context)
+                        : _buildAppDrawerForNotLoggedUser(context);
+                  },
+                ),
+                const Spacer(),
+                Material(
+                  color: Colors.transparent,
+                  child: ListTile(
+                    title: Text('Kontakt'.tr()),
+                    leading: const Icon(Icons.contact_support_rounded),
+                    onTap: () async {
+                      UrlLauncher.sendEmail('krzysiek.kycia1@gmail.com', 'Sport Partner Contact');
+                    },
+                  ),
+                ),
+                Material(
+                  color: Colors.transparent,
+                  child: ListTile(
+                    title: Text('buttons.changeCity'.tr()),
+                    leading: const Icon(Icons.change_circle),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SelectCityPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -67,7 +84,7 @@ class AppDrawer extends StatelessWidget {
             'hello'.tr(args: [userController.user!.name!]),
             style: const TextStyle(color: Colors.black),
           ),
-        const SizedBox(height: 15),
+        const SizedBox(height: 30),
         Material(
           color: Colors.transparent,
           child: ListTile(
