@@ -27,7 +27,8 @@
         "continueAnonymously": "Continue anonymously",
         "editProfile": "Edit profile",
         "messages": "Messages",
-        "save": "Save"
+        "save": "Save",
+        "contact": "Contact"
     },
     "skillLevel": {
         "beginner": "beginner",

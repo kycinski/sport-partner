@@ -38,7 +38,7 @@ class AppDrawer extends StatelessWidget {
                 Material(
                   color: Colors.transparent,
                   child: ListTile(
-                    title: Text('Kontakt'.tr()),
+                    title: Text('buttons.contact'.tr()),
                     leading: const Icon(Icons.contact_support_rounded),
                     onTap: () async {
                       UrlLauncher.sendEmail('krzysiek.kycia1@gmail.com', 'Sport Partner Contact');
