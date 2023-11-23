@@ -69,7 +69,7 @@ class PostCard extends StatelessWidget {
               ),
             ),
           ),
-          if (userController.userLoggedIn)
+          if (userController.userLoggedIn && userController.userConfirmedDetails)
             Builder(
               builder: (context) {
                 final myUser = userController.user!;
