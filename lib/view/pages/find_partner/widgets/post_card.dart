@@ -103,14 +103,14 @@ class PostCard extends StatelessWidget {
                   case PostCategory.unavailable:
                     return PostCardButton(
                       color: Colors.grey,
-                      child: const Text('This post is not available'),
+                      child: Text('postNotAvailable'.tr()),
                       onTap: () {
                         showDialog(
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: const Text('Post niedostępny'),
-                              content: const Text('Nie mozesz odpowiedziec na ten post'),
+                              title: Text('postNotAvailable'.tr()),
+                              content: Text('postNotAvailableExplanation'.tr()),
                               actions: <Widget>[
                                 TextButton(
                                   child: const Text(

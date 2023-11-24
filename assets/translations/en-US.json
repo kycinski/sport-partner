@@ -70,5 +70,7 @@
     "findPlaceEmptyList": "it looks like there are no places added that meet your criteria yet",
     "findPartnerEmptyList": "There are no posts for this category yet. Add first one!",
     "chatsList": "Chats list",
-    "chat": "Chat"
+    "chat": "Chat",
+    "postNotAvailable": "This post is not available",
+    "postNotAvailableExplanation": "You cannot reply to this post because you do not meet the author's conditions regarding gender or age."
 }
