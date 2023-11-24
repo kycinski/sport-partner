@@ -9,7 +9,7 @@ import 'package:sport_partner/services/post_service.dart';
 class FindPartnerController with ChangeNotifier {
   final List<Post> _posts = [];
   String? _categoryIdName;
-  final int _fetchLimit = 4;
+  final int _fetchLimit = 10;
   bool _hasNext = true;
   bool _isFetchingPosts = false;
 
