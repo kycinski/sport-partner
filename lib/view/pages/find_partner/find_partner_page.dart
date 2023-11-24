@@ -99,8 +99,8 @@ class _FindPartnerPageState extends State<FindPartnerPage> {
                   ),
                 )
               : ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Aby dodawać posty musisz uzupełnić swój profil'),
+                  SnackBar(
+                    content: Text('completeYourProfileToPublishPosts'.tr()),
                   ),
                 );
         },
